@@ -1,0 +1,54 @@
+body, html
+{
+    background-color: #242c33;
+    color: #fff
+}
+
+.ui.menu
+{
+    border-radius: 0;
+}
+
+.ui.inverted.menu
+{
+    background-color: #3A4149;
+    border-bottom: 1px solid #22262b;
+
+}
+
+.ui.message
+{
+    background-color: #45535f;
+    color: #b5c1ce;
+}
+
+.ui.message .header
+{
+    font-size: 30px !important;
+    font-size: 35px;
+    line-height: 35px;
+    margin-bottom: 20px
+}
+
+.vertical-menu
+{
+    background-color: #435360;
+    height: calc(100vh - 56px);
+}
+
+img.line-logo
+{
+    height: 50px
+}
+
+div.line-status
+{
+    float: left;
+    text-align: center;
+}
+
+.status-indicator
+{
+    color: #8bc34a;
+    font-size: 12px !important
+}
