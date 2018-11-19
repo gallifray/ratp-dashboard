@@ -16,10 +16,20 @@ body, html
 
 }
 
+.ui.inverted.menu .item
+{
+    margin: 0 auto;
+}
+
 .ui.message
 {
     background-color: #45535f;
     color: #b5c1ce;
+}
+
+div.main-content
+{
+    margin-top: 50px
 }
 
 .ui.message .header
@@ -27,7 +37,9 @@ body, html
     font-size: 30px !important;
     font-size: 35px;
     line-height: 35px;
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    text-align: center;
+    margin-bottom: 25px
 }
 
 .vertical-menu
@@ -50,5 +62,37 @@ div.line-status
 .status-indicator
 {
     color: #8bc34a;
-    font-size: 12px !important
+    font-size: 15px !important;
+    margin-top: 5px !important;
+}
+
+div.item::before
+{
+    display: none;
+}
+
+div.myfooter
+{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding-left: 15px;
+    background-color: #3A4149;
+    text-align: right;
+    padding-right: 10px;
+    font-weight: 100;
+    line-height: 30px
+}
+
+div.myfooter a
+{
+    color: #8798a9
+}
+
+@media only screen and (max-width: 767px)
+{
+    .ui.grid>.stackable.stackable.row>.column, .ui.stackable.grid>.column.grid>.column, .ui.stackable.grid>.column.row>.column, .ui.stackable.grid>.column:not(.row), .ui.stackable.grid>.row>.column, .ui.stackable.grid>.row>.wide.column, .ui.stackable.grid>.wide.column
+    {
+        width: 25% !important;
+    }
 }

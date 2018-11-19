@@ -11,7 +11,7 @@ class MyMenu extends Component {
     const { activeItem } = this.state
 
     return (
-      <Menu stackable inverted>
+      <Menu stackable inverted centered>
         <Menu.Item>
           <img src='./img/ratp-notext.png' />
         </Menu.Item>
