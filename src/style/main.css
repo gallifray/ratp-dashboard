@@ -27,14 +27,6 @@ body, html
     color: #565656;
     padding-bottom: 20px
 }
-@media only screen and (min-width: 767px)
-{
-    div.main-content
-    {
-        margin-top: 30px
-    }
-}
-
 
 div.ui.container
 {
@@ -56,6 +48,11 @@ div.ui.container
         width: 33%;
         float: left;
         padding: 0 20px 0 20px;
+    }
+
+    div.main-content
+    {
+        margin-top: 30px
     }
 }
 

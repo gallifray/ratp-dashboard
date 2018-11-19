@@ -154,7 +154,7 @@ class App extends Component {
             <MyFooter />
         </div>);
         }
-        return <h1>Loading</h1>
+        return <div></div>
     }
 }
 
