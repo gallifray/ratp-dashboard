@@ -27,11 +27,14 @@ body, html
     color: #565656;
     padding-bottom: 20px
 }
-
-div.main-content
+@media only screen and (min-width: 767px)
 {
-    margin-top: 50px
+    div.main-content
+    {
+        margin-top: 50px
+    }
 }
+
 
 div.ui.container
 {
