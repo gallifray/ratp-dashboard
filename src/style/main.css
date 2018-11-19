@@ -1,7 +1,7 @@
 body, html
 {
-    background-color: #242c33;
-    color: #fff
+    background-color: #ededed;
+    color: #444
 }
 
 .ui.menu
@@ -11,8 +11,8 @@ body, html
 
 .ui.inverted.menu
 {
-    background-color: #3A4149;
-    border-bottom: 1px solid #22262b;
+    background-color: #fff;
+    border-bottom: 1px solid #c3c3c3;
 
 }
 
@@ -23,13 +23,19 @@ body, html
 
 .ui.message
 {
-    background-color: #45535f;
-    color: #b5c1ce;
+    background-color: #fff;
+    color: #565656;
+    padding-bottom: 20px
 }
 
 div.main-content
 {
     margin-top: 50px
+}
+
+div.ui.container
+{
+    margin-top: 35px;
 }
 
 .ui.message .header
@@ -39,7 +45,8 @@ div.main-content
     line-height: 35px;
     margin-bottom: 20px;
     text-align: center;
-    margin-bottom: 25px
+    border-bottom: 1px solid #dedede !important;
+    padding-bottom: 10px;
 }
 
 .vertical-menu
@@ -57,6 +64,7 @@ div.line-status
 {
     float: left;
     text-align: center;
+    margin-top: 30px
 }
 
 .status-indicator
@@ -77,7 +85,8 @@ div.myfooter
     bottom: 0;
     right: 0;
     padding-left: 15px;
-    background-color: #3A4149;
+    background-color: #000;
+    color: #fff;
     text-align: right;
     padding-right: 10px;
     font-weight: 100;
@@ -87,12 +96,4 @@ div.myfooter
 div.myfooter a
 {
     color: #8798a9
-}
-
-@media only screen and (max-width: 767px)
-{
-    .ui.grid>.stackable.stackable.row>.column, .ui.stackable.grid>.column.grid>.column, .ui.stackable.grid>.column.row>.column, .ui.stackable.grid>.column:not(.row), .ui.stackable.grid>.row>.column, .ui.stackable.grid>.row>.wide.column, .ui.stackable.grid>.wide.column
-    {
-        width: 25% !important;
-    }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import { Menu } from 'semantic-ui-react'
+import { Menu, Icon } from 'semantic-ui-react'
 
 class MyMenu extends Component {
   state = {}
@@ -13,11 +13,8 @@ class MyMenu extends Component {
     return (
       <Menu stackable inverted centered>
         <Menu.Item>
-          <img src='./img/ratp-notext.png' />
+          <img src='./img/ratp-notext-color.png' />
         </Menu.Item>
-
-
-
       </Menu>
     )
   }

@@ -17,7 +17,6 @@ class LinesTramway extends Component {
           size='tiny'
           key={line.line}
           trigger={
-              <Grid.Column>
                   <div className="line-status">
                       <img className="line-logo " src={"./img/lignes/tramway/" + line.line + ".svg"}/>
                       <br />
@@ -29,8 +28,7 @@ class LinesTramway extends Component {
                           <Icon name="warning sign" className="status-indicator orange"/></div>
                               || <Icon name="circle" className="status-indicator red"/>)
                       }
-                  </div>
-              </Grid.Column>}
+                  </div>}
           header={line.title}
           content={line.message}
         />)
@@ -50,7 +48,6 @@ class LinesMetro extends Component {
           size='tiny'
           key={line.line}
           trigger={
-              <Grid.Column>
                   <div className="line-status">
                       <img className="line-logo " src={"./img/lignes/metro/" + line.line + ".svg"}/>
                       <br />
@@ -62,8 +59,7 @@ class LinesMetro extends Component {
                               <Icon name="warning sign" className="status-indicator orange"/></div>
                                   || <Icon name="circle" className="status-indicator red"/>)
                           }
-                  </div>
-              </Grid.Column>}
+                  </div>}
           header={line.title}
           content={line.message}
         />)
@@ -83,7 +79,6 @@ class LinesRer extends Component {
           size='tiny'
           key={line.line}
           trigger={
-              <Grid.Column>
                   <div className="line-status">
                       <img className="line-logo " src={"./img/lignes/rer/" + line.line + ".svg"}/>
                       <br />
@@ -95,8 +90,7 @@ class LinesRer extends Component {
                               <Icon name="warning sign" className="status-indicator orange"/></div>
                                   || <Icon name="circle" className="status-indicator red"/>)
                           }
-                  </div>
-              </Grid.Column>}
+                  </div>}
           header={line.title}
           content={line.message}
         />)
