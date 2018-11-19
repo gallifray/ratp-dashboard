@@ -4,7 +4,13 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 var Home = () => {return <p>Home</p>};
 var About = () => {return <p>About</p>};
-var NoMatch = () => {return <p>404</p>};
+
+class NoMatch extends Component {
+    render()
+    {
+        return (<p>{this.props.match.params.url}</p>)
+    }
+}
 
 class App extends Component {
   render() {
@@ -16,7 +22,7 @@ class App extends Component {
               <Switch>
                   <Route exact path="/" component={Home} />
                   <Route exact path="/about" component={About} />
-                  <Route component={NoMatch} />
+                  <Route exact path="/:url" component={NoMatch} />
               </Switch>
           </Router>
         </header>
