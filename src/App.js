@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
 import MyMenu from './components/menu'
 import MyFooter from './components/footer'
 import './style/main.css'
-import { Popup, Grid, Message, Icon, Container } from 'semantic-ui-react'
+import { Popup, Grid, Message, Icon, Container, Loader, Dimmer } from 'semantic-ui-react'
 
 class LinesTramway extends Component {
     constructor(props) {
@@ -30,7 +29,7 @@ class LinesTramway extends Component {
                       }
                   </div>}
           header={line.title}
-          content={line.message}
+          content={line.message.replace("Ts", "Tous")}
         />)
     )
     }
@@ -61,7 +60,7 @@ class LinesMetro extends Component {
                           }
                   </div>}
           header={line.title}
-          content={line.message}
+          content={line.message.replace("Ts", "Tous")}
         />)
     )
     }
@@ -92,7 +91,7 @@ class LinesRer extends Component {
                           }
                   </div>}
           header={line.title}
-          content={line.message}
+          content={line.message.replace("Ts", "Tous")}
         />)
     )
     }
@@ -124,7 +123,7 @@ class App extends Component {
                 <Container>
                     <Message>
                         <Message.Header>
-                            Métro
+                            <img src="./img/metro.svg" />
                         </Message.Header>
                         <Grid centered stackable="stackable" columns={16}>
                             <LinesMetro data={this.state.metros} />
@@ -134,7 +133,7 @@ class App extends Component {
                 <Container>
                     <Message>
                         <Message.Header>
-                            RER
+                            <img src="./img/rer.svg" />
                         </Message.Header>
                         <Grid centered stackable="stackable" columns={16}>
                             <LinesRer data={this.state.rers} />
@@ -144,7 +143,7 @@ class App extends Component {
                 <Container>
                     <Message>
                         <Message.Header>
-                            Trawmay
+                            <img src="./img/tramway.svg" />
                         </Message.Header>
                         <Grid centered stackable="stackable" columns={16}>
                             <LinesTramway data={this.state.tramways} />

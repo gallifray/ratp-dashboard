@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 13.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="Layer_1"
+   x="0px"
+   y="0px"
+   width="400px"
+   height="400px"
+   viewBox="0 0 400 400"
+   enable-background="new 0 0 400 400"
+   xml:space="preserve"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   sodipodi:docname="20090101030028!Tramway-T.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"><metadata
+   id="metadata8"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+   id="defs6"><inkscape:perspective
+     sodipodi:type="inkscape:persp3d"
+     inkscape:vp_x="0 : 200 : 1"
+     inkscape:vp_y="0 : 1000 : 0"
+     inkscape:vp_z="400 : 200 : 1"
+     inkscape:persp3d-origin="200 : 133.33333 : 1"
+     id="perspective10" /></defs><sodipodi:namedview
+   inkscape:window-height="991"
+   inkscape:window-width="1160"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0.0"
+   guidetolerance="10.0"
+   gridtolerance="10.0"
+   objecttolerance="10.0"
+   borderopacity="1.0"
+   bordercolor="#666666"
+   pagecolor="#ffffff"
+   id="base"
+   showgrid="false"
+   inkscape:zoom="1.165"
+   inkscape:cx="63.090129"
+   inkscape:cy="200"
+   inkscape:window-x="294"
+   inkscape:window-y="0"
+   inkscape:current-layer="Layer_1" />
+<path
+   d="M 399,200.494 C 399,90.053 309.909,1 199.473,1 C 89.55,1 1,90.053 1,200.494 C 1,310.416 89.55,399 199.473,399 C 309.909,399 399,310.416 399,200.494"
+   id="path2387"
+   style="fill:#14489e;fill-opacity:1" /><path
+   d="M 369.65,200.494 C 369.65,294.017 293.51,369.65 199.473,369.65 C 105.963,369.65 30.336,294.017 30.336,200.494 C 30.336,106.466 105.963,30.357 199.473,30.357 C 293.511,30.357 369.65,106.466 369.65,200.494 z"
+   id="path2385"
+   style="fill:#ffffff;fill-opacity:1" />
+<path
+   d="M 293.006,121.4 C 293.006,113.431 288.045,105.983 279.073,105.983 L 121.381,105.983 C 112.439,105.983 107.456,113.431 107.456,121.4 C 107.456,128.367 112.439,136.811 121.381,136.811 L 182.058,136.811 L 182.058,299.988 C 182.058,308.96 191.519,313.951 199.971,313.951 C 209.44,313.951 218.411,308.96 218.411,299.988 L 218.411,136.811 L 279.073,136.811 C 288.045,136.811 293.006,128.367 293.006,121.4 z"
+   id="path3"
+   style="fill:#14489e;fill-opacity:1" /></svg>

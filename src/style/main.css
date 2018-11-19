@@ -35,18 +35,23 @@ div.main-content
 
 div.ui.container
 {
-    margin-top: 35px;
+    margin-top: 25px;
 }
 
 .ui.message .header
 {
-    font-size: 30px !important;
+    font-size: 25px !important;
     font-size: 35px;
-    line-height: 35px;
-    margin-bottom: 20px;
+    line-height: 30px;
+    margin-bottom: 10px;
     text-align: center;
     border-bottom: 1px solid #dedede !important;
     padding-bottom: 10px;
+}
+
+.ui.message .header img
+{
+    height: 40px;
 }
 
 .vertical-menu
@@ -57,7 +62,7 @@ div.ui.container
 
 img.line-logo
 {
-    height: 50px
+    height: 35px
 }
 
 div.line-status
@@ -70,8 +75,7 @@ div.line-status
 .status-indicator
 {
     color: #8bc34a;
-    font-size: 15px !important;
-    margin-top: 5px !important;
+    font-size: 13px !important;
 }
 
 div.item::before
