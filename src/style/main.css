@@ -1,3 +1,8 @@
+*
+{
+    cursor: default;
+}
+
 body, html
 {
     background-color: #ededed;
@@ -9,7 +14,7 @@ body, html
     border-radius: 0;
 }
 
-.ui.inverted.menu
+.ui.inverted.menu.mainbar
 {
     background-color: #fff;
     border-bottom: 1px solid #c3c3c3;
@@ -32,7 +37,7 @@ div.ui.container
 {
     margin-top: 25px;
 }
-
+/*
 @media only screen and (min-width: 768px)
 {
     .ui.container {
@@ -40,9 +45,9 @@ div.ui.container
         float: left;
         padding: 0 10px 0 10px;
     }
-}
+} */
 
-@media only screen and (min-width: 1200px)
+/* @media only screen and (min-width: 1200px)
 {
     .ui.container {
         width: 33%;
@@ -54,9 +59,9 @@ div.ui.container
     {
         margin-top: 30px
     }
-}
+} */
 
-.ui.message .header
+.line-header
 {
     font-size: 25px !important;
     font-size: 35px;
@@ -80,7 +85,14 @@ div.ui.container
 
 img.line-logo
 {
-    height: 35px
+    height: 35px;
+    vertical-align: middle;
+}
+
+img.line-logo.little
+{
+    height: 30px;
+    margin-right: 4px
 }
 
 div.item img
@@ -123,4 +135,68 @@ div.myfooter
 div.myfooter a
 {
     color: #BA68C8
+}
+
+.ui.grid.container {
+    width: calc(100% - 6vw) !important;
+}
+
+.perturbation-title
+{
+    text-align: center;
+    font-size: 20px !important;
+    border-bottom: 1px solid #dedede;
+    padding: 15px 0 20px 0;
+    margin-bottom: 20px !important;
+}
+
+div.perturbation
+{
+    margin-bottom: 10px
+}
+
+@media only screen and (max-width: 767px)
+{
+    .ui.grid.container {
+        width: inherit !important;
+    }
+
+
+}
+
+.ui.vertical.menu {
+    width: 100%;
+}
+
+div.verticalBar
+{
+    background-color: #292929;
+    width: 100%;
+    height: calc(100vh - 54px);
+    margin-top: -15px;
+    color: #fff;
+    padding: 20px;
+    padding-top: 30px;
+}
+
+div.verticalBar div.title
+{
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #505050;
+}
+
+div.thirteen.wide.column
+{
+    margin-left: -15px;
+}
+
+div.column
+{
+    padding-bottom: 0 !important
 }

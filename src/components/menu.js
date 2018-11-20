@@ -8,7 +8,7 @@ class MyMenu extends Component {
 
   render() {
     return (
-      <Menu stackable inverted centered>
+      <Menu stackable inverted className="mainbar">
         <Menu.Item>
           <img src='./img/ratp-notext-color.png' />
         </Menu.Item>
