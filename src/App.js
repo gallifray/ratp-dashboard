@@ -3,6 +3,7 @@ import MyMenu from './components/menu'
 import MyFooter from './components/footer'
 import './style/main.css'
 import { Image, Popup, Grid, Message, Icon, Container, Loader, Dimmer, List, Menu } from 'semantic-ui-react'
+import { LinesRer, LinesMetro, LinesTramway } from './components/lines'
 
 class VerticalMenu extends Component {
     render()
@@ -12,99 +13,6 @@ class VerticalMenu extends Component {
                 <div className="title">MENU</div>
             </div>
         )
-    }
-}
-
-class LinesTramway extends Component {
-    constructor(props) {
-        super(props);
-    }
-    render() {
-        return(
-        this.props.data.map((line) =>
-        <Popup
-          position='bottom center'
-          size='tiny'
-          key={line.line}
-          trigger={
-                  <div className="line-status">
-                      <img className="line-logo " src={"./img/lignes/tramway/" + line.line + ".svg"}/>
-                      <br />
-                      {
-                          line.slug === "normal"
-                          && <Icon name="circle" className="status-indicator"/>
-                          || (line.slug === "normal_trav"
-                              && <div><Icon name="circle" className="status-indicator"/>
-                          <Icon name="warning sign" className="status-indicator orange"/></div>
-                              || <Icon name="circle" className="status-indicator red"/>)
-                      }
-                  </div>}
-          header={line.title}
-          content={line.message.replace("Ts", "Tous")}
-        />)
-    )
-    }
-}
-
-class LinesMetro extends Component {
-    constructor(props) {
-        super(props);
-    }
-    render() {
-        return(
-        this.props.data.map((line) =>
-        <Popup
-          position='bottom center'
-          size='tiny'
-          key={line.line}
-          trigger={
-                  <div className="line-status">
-                      <img className="line-logo " src={"./img/lignes/metro/" + line.line + ".svg"}/>
-                      <br />
-                          {
-                              line.slug === "normal"
-                              && <Icon name="circle" className="status-indicator"/>
-                              || (line.slug === "normal_trav"
-                                  && <div><Icon name="circle" className="status-indicator"/>
-                              <Icon name="warning sign" className="status-indicator orange"/></div>
-                                  || <Icon name="circle" className="status-indicator red"/>)
-                          }
-                  </div>}
-          header={line.title}
-          content={line.message.replace("Ts", "Tous")}
-        />)
-    )
-    }
-}
-
-class LinesRer extends Component {
-    constructor(props) {
-        super(props);
-    }
-    render() {
-        return(
-        this.props.data.map((line) =>
-        <Popup
-          position='bottom center'
-          size='tiny'
-          key={line.line}
-          trigger={
-                  <div className="line-status">
-                      <img className="line-logo " src={"./img/lignes/rer/" + line.line + ".svg"}/>
-                      <br />
-                          {
-                              line.slug === "normal"
-                              && <Icon name="circle" className="status-indicator"/>
-                              || (line.slug === "normal_trav"
-                                  && <div><Icon name="circle" className="status-indicator"/>
-                              <Icon name="warning sign" className="status-indicator orange"/></div>
-                                  || <Icon name="circle" className="status-indicator red"/>)
-                          }
-                  </div>}
-          header={line.title}
-          content={line.message.replace("Ts", "Tous")}
-        />)
-    )
     }
 }
 
@@ -166,7 +74,7 @@ class App extends Component {
                         <VerticalMenu />
                     </Grid.Column>
                     <Grid.Column largeScreen={13} computer={12} tablet={11}>
-                        <Grid stackable columns={2}>
+                        <Grid stackable columns={3} reversed='mobile'>
                             <Grid.Column width={6}>
                                 <Message>
                                     <Message.Header className="line-header">
@@ -201,8 +109,11 @@ class App extends Component {
                                         Perturbations en cours
                                         <br/>
                                     </Message.Header>
+                                    <h3>Métro:</h3>
                                     <PerturbationsList data={this.state.metros} type="metro" />
+                                    <h3>RER:</h3>
                                     <PerturbationsList data={this.state.rers} type="rer" />
+                                    <h3>Tramway:</h3>
                                     <PerturbationsList data={this.state.tramways} type="tramway" />
                                 </Message>
                             </Grid.Column>

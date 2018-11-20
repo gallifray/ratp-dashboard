@@ -18,6 +18,10 @@ body, html
 {
     background-color: #fff;
     border-bottom: 1px solid #c3c3c3;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    z-index: 99999
 
 }
 
@@ -60,6 +64,10 @@ div.ui.container
         margin-top: 30px
     }
 } */
+
+.main-content {
+    margin-top: 70px;
+}
 
 .line-header
 {
@@ -161,7 +169,28 @@ div.perturbation
         width: inherit !important;
     }
 
+    .ui.message .header img {
+        height: 30px
+    }
 
+    .ui.message .header {
+        margin-bottom: 10px
+    }
+
+    img.line-logo
+    {
+        height: 25px;
+        vertical-align: middle;
+    }
+    .status-indicator
+    {
+        color: #8bc34a;
+        font-size: 10px !important;
+    }
+    div.line-status
+    {
+        margin-top: 15px
+    }
 }
 
 .ui.vertical.menu {
@@ -199,4 +228,8 @@ div.thirteen.wide.column
 div.column
 {
     padding-bottom: 0 !important
+}
+
+.center {
+    text-align: center;
 }
