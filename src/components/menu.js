@@ -1,20 +1,35 @@
-import React, { Component } from 'react';
-import { Menu } from 'semantic-ui-react'
+import React, {Component} from 'react';
+import {Menu, Icon} from 'semantic-ui-react'
 
 class MyMenu extends Component {
-  state = {}
+    constructor(props)
+    {
+        super(props);
+    }
+    toggleMenu()
+    {
+        var element = document.getElementsByClassName("responsive-menu")[0];
+        element.classList.toggle("visible");
+    }
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
-
-  render() {
-    return (
-      <Menu stackable inverted className="mainbar">
-        <Menu.Item>
-          <img src='./img/ratp-notext-color.png' />
-        </Menu.Item>
-      </Menu>
-    )
-  }
+    render()
+    {
+        return (
+                <Menu inverted="inverted" className="mainbar">
+                <Menu.Item className="menu-item" onClick={this.toggleMenu}>
+                    <Icon name="bars" className="bars"/>
+                </Menu.Item>
+                <Menu.Item className="logo">
+                    <img src='./img/ratp-notext-color.png'/>
+                </Menu.Item>
+                <Menu.Menu position='right'>
+                    <Menu.Item onClick={this.props.reloadAPIData}>
+                        <Icon name="refresh" className="refresh"/>
+                    </Menu.Item>
+                </Menu.Menu>
+            </Menu>
+        )
+    }
 }
 
 export default MyMenu;

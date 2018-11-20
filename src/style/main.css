@@ -22,13 +22,35 @@ body, html
     position: fixed;
     width: 100vw;
     top: 0;
-    z-index: 99999
-
+    z-index: 99999;
+    color: #444
 }
 
-.ui.inverted.menu .item
+.ui.inverted.menu.mainbar .logo
 {
-    margin: 0 auto;
+    left: calc(50% - 35px);
+}
+
+.ui.inverted.menu.mainbar i.refresh,i.bars
+{
+    color: #797979;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.ui.inverted.menu.mainbar i.refresh:hover,i.bars:hover
+{
+    color: #505050;
+}
+
+.ui.inverted.menu .menu-item
+{
+    position: absolute;
+    left: 0;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-top: 18px;
+    display: none;
 }
 
 .ui.message
@@ -122,6 +144,11 @@ div.line-status
     font-size: 13px !important;
 }
 
+.status-indicator:last-child
+{
+    margin-right: 0 !important
+}
+
 div.item::before
 {
     display: none;
@@ -166,7 +193,8 @@ div.myfooter a
 div.perturbation
 {
     margin-bottom: 10px;
-    padding-left: 15px
+    padding-left: 15px;
+    display: inline-block;
 }
 
 @media only screen and (max-width: 767px)
@@ -194,10 +222,6 @@ div.perturbation
         color: #8bc34a;
         font-size: 10px !important;
     }
-    .status-indicator:last-child
-    {
-        margin-right: 0 !important
-    }
     div.line-status
     {
         margin-top: 15px
@@ -220,6 +244,22 @@ div.perturbation
         padding: 5px 0 15px 0;
     }
 
+    .ui.inverted.menu .menu-item
+    {
+        display: inherit;
+    }
+    .responsive-menu
+    {
+        display: none !important;
+        padding: 0 !important
+    }
+    .responsive-menu.visible
+    {
+        display: inherit !important;
+    }
+    .ui.message:first-child {
+        margin-bottom: 20px;
+    }
 }
 
 .ui.vertical.menu {
@@ -234,8 +274,10 @@ div.verticalBar
     margin-top: -15px;
     color: #fff;
     padding: 20px;
-    padding-top: 30px;
+    padding-top: 20px;
 }
+
+
 
 div.verticalBar div.title
 {
@@ -258,6 +300,12 @@ div.verticalBar div.item
     margin-top: 10px;
     padding-left: 15px;
     color: #7edfff;
+    line-height: 15px;
+}
+
+div.verticalBar div.item.border
+{
+    border-bottom: 1px solid #3c3c3c;
 }
 
 div.verticalBar div.item.about
@@ -304,4 +352,10 @@ div.column
 h1.page-title
 {
     margin: 20px
+}
+
+h1.loading-message
+{
+    font-size: 20px;
+    margin-top: 30px;
 }

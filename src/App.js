@@ -10,17 +10,20 @@ class VerticalMenu extends Component {
     {
         return (
             <div className="verticalBar">
-                <div className="item">
+                <div className="item border">
                     <Icon name="th" />Vue d'ensemble
                 </div>
-                <div className="item">
+                <div className="item border">
                     <Icon name="clock outline" />Trafic en temps réel
+                </div>
+                <div className="item border">
+                    <Icon name="map outline" />Carte interactive
                 </div>
                 <div className="item about">
                     <Icon name="question circle" />À propos
                 </div>
                 <div className="item legal">
-                    Made by <a target="_blank" href="https://github.com/gallifray">Gallifray</a> with <Icon name="heart" />
+                    Made by <a target="_blank" href="http://gallifray.fr/">Gallifray</a> with <Icon name="heart" />
                 </div>
             </div>
         )
@@ -33,37 +36,42 @@ class PerturbationsList extends Component
         super(props);
     }
     render() {
-        return(
-            this.props.data.map((line) =>
-                <div>
-                {
-                    line.slug != "normal"
-                    &&         <Popup
-                              position='bottom center'
-                              size='tiny'
-                              key={line.line}
-                              trigger={
-                                  <div className="perturbation">
-                                      <img className="line-logo little" src={"./img/lignes/" + this.props.type + "/" + line.line + ".svg"}/>
-                                      <b> {line.title}</b>
-                                  </div>
-                              }
-                              header={line.title}
-                              content={line.message.replace("Ts", "Tous")}
+        if (this.props.loaded)
+        {
+                return(
+                    this.props.data.map((line) =>
+                    <div>
+                        {
+                            line.slug != "normal"
+                            &&         <Popup
+                            position='bottom center'
+                            size='tiny'
+                            key={line.line}
+                            trigger={
+                                <div className="perturbation">
+                                    <img className="line-logo little" src={"./img/lignes/" + this.props.type + "/" + line.line + ".svg"}/>
+                                    <b> {line.title}</b>
+                                </div>
+                            }
+                            header={line.title}
+                            content={line.message.replace("Ts", "Tous")}
                             />
-                }
+                    }
                 </div>
             )
         )
+        }
+        else return <h1 className="loading-message">Chargement...</h1>
     }
 }
 
 class App extends Component {
     constructor(props) {
         super(props);
+        this.reloadAPIData = this.reloadAPIData.bind(this);
         this.state = {
             "loaded": false,
-            "perturbations": []
+            "reloaded": true
         }
         fetch('https://api-ratp.pierre-grimaud.fr/v3/traffic?_format=json')
         .then(response => response.json())
@@ -74,14 +82,30 @@ class App extends Component {
             "loaded": true
         }))
     }
+
+    reloadAPIData()
+    {
+        var that = this;
+        that.setState({ loaded: false });
+        fetch('https://api-ratp.pierre-grimaud.fr/v3/traffic?_format=json')
+        .then(response => response.json())
+        .then(data => this.setState({
+            "metros": data.result.metros,
+            "rers": data.result.rers,
+            "tramways": data.result.tramways,
+            loaded: true
+        }))
+
+    }
+
     render() {
-        if (this.state.loaded)
+        if (1)
         {
         return (<div>
-            <MyMenu/>
+            <MyMenu reloadAPIData={this.reloadAPIData} />
             <div className="main-content">
                 <Grid stackable columns={2}>
-                    <Grid.Column largeScreen={3} computer={4} tablet={5} only='computer tablet'>
+                    <Grid.Column largeScreen={3} computer={4} tablet={5} className="responsive-menu">
                         <VerticalMenu />
                     </Grid.Column>
                     <Grid.Column largeScreen={13} computer={12} tablet={11}>
@@ -92,7 +116,7 @@ class App extends Component {
                                         <img src="./img/metro.svg" />
                                     </Message.Header>
                                     <Grid centered columns={16}>
-                                        <LinesMetro data={this.state.metros} />
+                                        <LinesMetro data={this.state.metros} loaded={this.state.loaded}/>
                                     </Grid>
                                 </Message>
                             </Grid.Column>
@@ -102,7 +126,7 @@ class App extends Component {
                                         <img src="./img/rer.svg" />
                                     </Message.Header>
                                     <Grid centered columns={16}>
-                                        <LinesRer data={this.state.rers} />
+                                        <LinesRer data={this.state.rers} loaded={this.state.loaded}/>
                                     </Grid>
                                 </Message>
                                 <Message>
@@ -110,7 +134,7 @@ class App extends Component {
                                         <img src="./img/tramway.svg" />
                                     </Message.Header>
                                     <Grid centered columns={16}>
-                                        <LinesTramway data={this.state.tramways} />
+                                        <LinesTramway data={this.state.tramways} loaded={this.state.loaded}/>
                                     </Grid>
                                 </Message>
                             </Grid.Column>
@@ -122,11 +146,11 @@ class App extends Component {
                                         <br/>
                                     </Message.Header>
                                     <h3>Métro:</h3>
-                                    <PerturbationsList data={this.state.metros} type="metro" />
+                                    <PerturbationsList data={this.state.metros} type="metro" loaded={this.state.loaded} />
                                     <h3>RER:</h3>
-                                    <PerturbationsList data={this.state.rers} type="rer" />
+                                    <PerturbationsList data={this.state.rers} type="rer" loaded={this.state.loaded} />
                                     <h3>Tramway:</h3>
-                                    <PerturbationsList data={this.state.tramways} type="tramway" />
+                                    <PerturbationsList data={this.state.tramways} type="tramway" loaded={this.state.loaded} />
                                 </Message>
                             </Grid.Column>
                         </Grid>
@@ -135,7 +159,6 @@ class App extends Component {
             </div>
         </div>);
         }
-        return <div>Chargement...</div>
     }
 }
 
