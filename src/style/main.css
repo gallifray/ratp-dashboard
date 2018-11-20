@@ -6,7 +6,8 @@
 body, html
 {
     background-color: #ededed;
-    color: #444
+    color: #444;
+    height: calc(100vh - 70px);
 }
 
 .ui.menu
@@ -132,7 +133,7 @@ div.myfooter
     bottom: 0;
     right: 0;
     padding-left: 15px;
-    background-color: #000;
+    background-color: #497e84;
     color: #fff;
     text-align: right;
     padding-right: 10px;
@@ -142,7 +143,7 @@ div.myfooter
 
 div.myfooter a
 {
-    color: #BA68C8
+    color: #86d7de
 }
 
 .ui.grid.container {
@@ -158,9 +159,14 @@ div.myfooter a
     margin-bottom: 20px !important;
 }
 
+.perturbation-title i {
+    color: #f2711c
+}
+
 div.perturbation
 {
-    margin-bottom: 10px
+    margin-bottom: 10px;
+    padding-left: 15px
 }
 
 @media only screen and (max-width: 767px)
@@ -179,18 +185,41 @@ div.perturbation
 
     img.line-logo
     {
-        height: 25px;
+        height: 25px !important;
         vertical-align: middle;
+        margin-bottom: -2px;
     }
     .status-indicator
     {
         color: #8bc34a;
         font-size: 10px !important;
     }
+    .status-indicator:last-child
+    {
+        margin-right: 0 !important
+    }
     div.line-status
     {
         margin-top: 15px
     }
+    div.myfooter
+    {
+        position: inherit;
+        margin-top: 10px;
+        text-align: center;
+        padding: 0;
+    }
+    h1.page-title
+    {
+        margin: 0px 0px 10px 0px !important;
+        font-size: 20px;
+    }
+
+    .perturbation-title
+    {
+        padding: 5px 0 15px 0;
+    }
+
 }
 
 .ui.vertical.menu {
@@ -201,7 +230,7 @@ div.verticalBar
 {
     background-color: #292929;
     width: 100%;
-    height: calc(100vh - 54px);
+    height: calc(100vh - 55px);
     margin-top: -15px;
     color: #fff;
     padding: 20px;
@@ -214,10 +243,48 @@ div.verticalBar div.title
     display: block;
     text-align: center;
     font-weight: 900;
-    font-size: 30px;
+    font-size: 20px;
     line-height: 30px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     border-bottom: 1px solid #505050;
+    margin-bottom: 20px;
+}
+
+div.verticalBar div.item
+{
+    font-size: 14px;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    padding-left: 15px;
+    color: #7edfff;
+}
+
+div.verticalBar div.item.about
+{
+    color: #b3b3b3;
+    position: absolute;
+    bottom: 30px;
+}
+
+div.verticalBar div.item.legal
+{
+    color: #616161;
+    position: absolute;
+    bottom: 5px;
+    font-size: 11px;
+}
+
+div.verticalBar div.item.legal i
+{
+    font-size: 11px;
+}
+
+div.verticalBar div.item i
+{
+    font-size: 25px;
+    vertical-align: top;
+    margin-right: 10px
 }
 
 div.thirteen.wide.column
@@ -232,4 +299,9 @@ div.column
 
 .center {
     text-align: center;
+}
+
+h1.page-title
+{
+    margin: 20px
 }

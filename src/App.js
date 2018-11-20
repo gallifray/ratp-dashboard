@@ -10,7 +10,18 @@ class VerticalMenu extends Component {
     {
         return (
             <div className="verticalBar">
-                <div className="title">MENU</div>
+                <div className="item">
+                    <Icon name="th" />Vue d'ensemble
+                </div>
+                <div className="item">
+                    <Icon name="clock outline" />Trafic en temps réel
+                </div>
+                <div className="item about">
+                    <Icon name="question circle" />À propos
+                </div>
+                <div className="item legal">
+                    Made by <a target="_blank" href="https://github.com/gallifray">Gallifray</a> with <Icon name="heart" />
+                </div>
             </div>
         )
     }
@@ -106,7 +117,8 @@ class App extends Component {
                             <Grid.Column width={5}>
                                 <Message>
                                     <Message.Header className="perturbation-title">
-                                        Perturbations en cours
+                                        <Icon name="warning circle" />
+                                        Perturbations
                                         <br/>
                                     </Message.Header>
                                     <h3>Métro:</h3>
@@ -121,10 +133,9 @@ class App extends Component {
                     </Grid.Column>
                 </Grid>
             </div>
-            <MyFooter />
         </div>);
         }
-        return <div></div>
+        return <div>Chargement...</div>
     }
 }
 
