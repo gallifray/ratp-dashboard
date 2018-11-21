@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../style/main.css';
 import { Popup, Grid, Message, Icon, Loader, Dimmer } from 'semantic-ui-react';
 import Lines from '../components/lines';
+import { Link } from "react-router-dom";
 
 
 class PerturbationsList extends Component
@@ -15,27 +16,30 @@ class PerturbationsList extends Component
                     <div key={"perturbation/" + line.line}>
                         {
                             line.slug !== "normal"
-                            &&         <Popup
-                            position='bottom center'
-                            size='tiny'
-                            key={line.line}
-                            trigger={
-                                <div className="perturbation">
-                                    <img
-                                        className="line-logo little"
-                                        src={"/img/lignes/" + this.props.type + "/" + line.line + ".svg"}
-                                        alt={"/img/lignes/" + this.props.type + "/" + line.line}
-                                    />
-                                    <b> {line.title}</b>
-                                </div>
-                            }
-                            header={line.title}
-                            content={line.message.replace("Ts", "Tous")}
-                            />
-                    }
-                </div>
+                            &&
+                            <Link key={this.props.type + "/" + line.line} to={"/ligne/" + this.props.type + "/" + line.line + "/"}>
+                                <Popup
+                                    position='bottom center'
+                                    size='tiny'
+                                    key={line.line}
+                                    trigger={
+                                        <div className="perturbation">
+                                            <img
+                                                className="line-logo little"
+                                                src={"/img/lignes/" + this.props.type + "/" + line.line + ".svg"}
+                                                alt={"/img/lignes/" + this.props.type + "/" + line.line}
+                                            />
+                                            <b> {line.title}</b>
+                                        </div>
+                                    }
+                                    header={line.title}
+                                    content={line.message.replace("Ts", "Tous")}
+                                />
+                            </Link>
+                        }
+                    </div>
+                )
             )
-        )
         }
         else return <h1 className="loading-message">Chargement...</h1>
     }

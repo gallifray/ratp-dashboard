@@ -197,6 +197,7 @@ div.perturbation
     margin-bottom: 10px;
     padding-left: 15px;
     display: inline-block;
+    color: #565656;
 }
 
 @media only screen and (max-width: 767px)
@@ -368,4 +369,12 @@ h1.loading-message
     background-color: rgba(255, 255, 255, 0.95);
     border: 1px solid #d8d8d8;
     border-radius: 4px;
+}
+
+.switch-wrapper {
+  position: relative;
+}
+
+.switch-wrapper > div {
+  position: absolute;
 }
