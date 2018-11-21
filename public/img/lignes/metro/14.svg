@@ -1,1 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1050 1050"><circle fill="#622280" cx="500" cy="500" r="500"/><path fill="#fff" d="M381.97 765.05V235.26h-92.421c-23.953 18.717-80.887 54.086-142.52 83.339l-32.296 14.772 35.95 81.188 27.869-14.159c19.375-9.83 72.85-37.443 90.772-51.829v416.46h112.64M845.57 654.46v-82.65h-65.233V234.78h-135.17l-205.67 321.23v98.452h238.7v110.3h102.14v-110.3h65.23m-167.37-82.65h-147.84l108.06-169.54c20.973-33.159 36.133-65.39 38.266-74.472h1.514v244.012z"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 952.4 952.4" style="enable-background:new 0 0 952.4 952.4;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#622280;}
+	.st1{fill:#FFFFFF;}
+</style>
+<circle class="st0" cx="476.2" cy="476.2" r="476.2"/>
+<path class="st1" d="M363.8,728.6V224.1h-88c-22.8,17.8-77,51.5-135.7,79.4l-30.8,14.1l34.2,77.3l26.5-13.5
+	c18.5-9.4,69.4-35.7,86.4-49.4v396.6L363.8,728.6 M805.3,623.3v-78.7h-62.1v-321H614.4L418.6,529.5v93.8h227.3v105h97.3v-105
+	L805.3,623.3 M645.9,544.6H505.1L608,383.1c20-31.6,34.4-62.3,36.4-70.9h1.4L645.9,544.6L645.9,544.6z"/>
+</svg>

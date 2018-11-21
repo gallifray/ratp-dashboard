@@ -1,6 +1,6 @@
-*
+*:not(div.line-status)
 {
-    /* cursor: default; */
+    cursor: default;
 }
 
 body, html
@@ -137,7 +137,7 @@ div.line-status
     float: left;
     text-align: center;
     margin-top: 30px;
-    cursor: pointer;
+    cursor: pointer !important;
 }
 
 .status-indicator
@@ -258,6 +258,11 @@ div.perturbation
     .responsive-menu.visible
     {
         display: inherit !important;
+    }
+
+    .perturbation_message h3
+    {
+        margin-top: 2px
     }
 }
 

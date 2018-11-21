@@ -1,0 +1,67 @@
+div.page_ligne div.ui.message div.header
+{
+    border-bottom: 1px solid #ededed;
+    padding-bottom: 7px
+}
+
+div.page_ligne div.ui.message div.header img
+{
+    height: 55px
+}
+
+div.page_ligne div.ui.message div.header img:first-child
+{
+    margin-right: 8px;
+}
+
+div.page_ligne div.ui.message div.header.perturbation-title
+{
+    font-size: 23px !important;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+
+div.page_ligne .ui.dimmer
+{
+    border-radius: 0;
+    border: none;
+    left: 1px !important;
+    top: -1px !important;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+div.page_ligne .float_indicator
+{
+    float: right;
+    height: 100%;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+div.page_ligne .float_indicator i
+{
+    font-size: 17px !important
+}
+
+div.page_ligne div.trafic b
+{
+    font-size: 17px
+}
+
+div.page_ligne div.trafic i
+{
+    font-size: 17px !important;
+    vertical-align: baseline;
+    margin-right: 6px !important;
+}
+
+div.page_ligne div.trafic div.trafic_message
+{
+    margin-top: 5px;
+}
+
+div.page_ligne div.trafic div.trafic_message.padding
+{
+    padding-left: 28px;
+}

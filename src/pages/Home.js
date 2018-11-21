@@ -1,32 +1,31 @@
 import React, { Component } from 'react';
-import MyMenu from '../components/menu';
-import MyFooter from '../components/footer';
 import '../style/main.css';
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import { Image, Popup, Grid, Message, Icon, Container, Loader, Dimmer, List, Menu } from 'semantic-ui-react';
-import { LinesRer, LinesMetro, LinesTramway } from '../components/lines';
+import { Popup, Grid, Message, Icon, Loader, Dimmer } from 'semantic-ui-react';
+import Lines from '../components/lines';
 
 
 class PerturbationsList extends Component
 {
-    constructor(props) {
-        super(props);
-    }
-    render() {
+    render()
+    {
         if (this.props.loaded)
         {
                 return(
                     this.props.data.map((line) =>
-                    <div>
+                    <div key={"perturbation/" + line.line}>
                         {
-                            line.slug != "normal"
+                            line.slug !== "normal"
                             &&         <Popup
                             position='bottom center'
                             size='tiny'
                             key={line.line}
                             trigger={
                                 <div className="perturbation">
-                                    <img className="line-logo little" src={"./img/lignes/" + this.props.type + "/" + line.line + ".svg"}/>
+                                    <img
+                                        className="line-logo little"
+                                        src={"/img/lignes/" + this.props.type + "/" + line.line + ".svg"}
+                                        alt={"/img/lignes/" + this.props.type + "/" + line.line}
+                                    />
                                     <b> {line.title}</b>
                                 </div>
                             }
@@ -81,7 +80,7 @@ class Home extends Component {
                     <Grid.Column width={6}>
                         <Message>
                             <Message.Header className="line-header">
-                                <img src="./img/metro.svg" />
+                                <img alt="metro-logo" src="/img/metro.svg" />
                             </Message.Header>
                             <Grid centered columns={16}>
                                 {
@@ -90,14 +89,14 @@ class Home extends Component {
                                         <Loader inverted />
                                     </Dimmer>
                                 }
-                                <LinesMetro data={this.state.metros} loaded={this.state.loaded}/>
+                                <Lines data={this.state.metros} loaded={this.state.loaded} type="metro"/>
                             </Grid>
                         </Message>
                     </Grid.Column>
                     <Grid.Column width={5}>
                         <Message>
                             <Message.Header className="line-header">
-                                <img src="./img/rer.svg" />
+                                <img alt="rer-logo" src="/img/rer.svg" />
                             </Message.Header>
                             <Grid centered columns={16}>
                                 {
@@ -106,12 +105,12 @@ class Home extends Component {
                                         <Loader inverted />
                                     </Dimmer>
                                 }
-                                <LinesRer data={this.state.rers} loaded={this.state.loaded}/>
+                                <Lines data={this.state.rers} loaded={this.state.loaded} type="rer"/>
                             </Grid>
                         </Message>
                         <Message>
                             <Message.Header className="line-header">
-                                <img src="./img/tramway.svg" />
+                                <img alt="tramway-logo" src="/img/tramway.svg" />
                             </Message.Header>
                             <Grid centered columns={16}>
                                 {
@@ -120,12 +119,12 @@ class Home extends Component {
                                         <Loader inverted />
                                     </Dimmer>
                                 }
-                                <LinesTramway data={this.state.tramways} loaded={this.state.loaded}/>
+                                <Lines data={this.state.tramways} loaded={this.state.loaded} type="tramway"/>
                             </Grid>
                         </Message>
                     </Grid.Column>
                     <Grid.Column width={5}>
-                        <Message>
+                        <Message className="perturbation_message">
                             <Message.Header className="perturbation-title">
                                 <Icon name="warning circle" />
                                 Perturbations

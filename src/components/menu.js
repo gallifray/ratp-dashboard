@@ -2,10 +2,6 @@ import React, {Component} from 'react';
 import {Menu, Icon} from 'semantic-ui-react'
 
 class MyMenu extends Component {
-    constructor(props)
-    {
-        super(props);
-    }
     toggleMenu()
     {
         var element = document.getElementsByClassName("responsive-menu")[0];
@@ -15,12 +11,12 @@ class MyMenu extends Component {
     render()
     {
         return (
-                <Menu inverted="inverted" className="mainbar">
+            <Menu inverted className="mainbar">
                 <Menu.Item className="menu-item" onClick={this.toggleMenu}>
                     <Icon name="bars" className="bars"/>
                 </Menu.Item>
                 <Menu.Item className="logo">
-                    <img src='./img/ratp-notext-color.png'/>
+                    <img alt="ratp-logo" src='/img/ratp-notext-color.png'/>
                 </Menu.Item>
                 <Menu.Menu position='right'>
                     <Menu.Item onClick={this.props.reloadAPIData}>

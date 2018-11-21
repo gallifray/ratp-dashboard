@@ -1,1 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1050 1050"><circle fill="#fff" stroke="#B98B59" stroke-width="70" stroke-miterlimit="10" cx="500" cy="500" r="465"/><path fill="#B98B59" d="M684.502 322.085v-85.892H315.497v88.147h256.166l-128.4 239.058c-46.365 86.115-65.001 130.599-65.001 200.408h120.331c-.02-82.985 70.014-240.587 185.909-441.721"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 955 955.4" style="enable-background:new 0 0 955 955.4;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;stroke:#B98B59;stroke-width:70;stroke-miterlimit:10;}
+	.st1{fill:#B98B59;}
+</style>
+<circle class="st0" cx="476.2" cy="476.2" r="442.9"/>
+<path class="st1" d="M651.9,306.7v-81.8H300.5v83.9h244L422.2,536.6c-44.2,82-61.9,124.4-61.9,190.9h114.6
+	C474.8,648.4,541.5,498.3,651.9,306.7"/>
+</svg>
