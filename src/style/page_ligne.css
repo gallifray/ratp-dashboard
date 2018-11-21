@@ -65,3 +65,9 @@ div.page_ligne div.trafic div.trafic_message.padding
 {
     padding-left: 28px;
 }
+div.page_ligne span.directions
+{
+    color: #0047a3;
+    margin-top: 2px;
+    display: inline-block;
+}

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Menu, Icon} from 'semantic-ui-react'
+import { Link } from "react-router-dom";
 
 class MyMenu extends Component {
     toggleMenu()
@@ -16,7 +17,9 @@ class MyMenu extends Component {
                     <Icon name="bars" className="bars"/>
                 </Menu.Item>
                 <Menu.Item className="logo">
-                    <img alt="ratp-logo" src='/img/ratp-notext-color.png'/>
+                    <Link to="/">
+                        <img alt="ratp-logo" src='/img/ratp-notext-color.png'/>
+                    </Link>
                 </Menu.Item>
                 <Menu.Menu position='right'>
                     <Menu.Item onClick={this.props.reloadAPIData}>

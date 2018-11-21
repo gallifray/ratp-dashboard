@@ -29,6 +29,15 @@ body, html
 .ui.inverted.menu.mainbar .logo
 {
     left: calc(50% - 35px);
+
+}
+
+.ui.inverted.menu.mainbar .logo img
+{
+    display: inline-block;
+    vertical-align: middle;
+    margin: -.3em 0;
+    width: 2.5em;
 }
 
 .ui.inverted.menu.mainbar i.refresh,i.bars

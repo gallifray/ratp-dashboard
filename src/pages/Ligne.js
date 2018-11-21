@@ -12,14 +12,52 @@ export default class Ligne extends Component
         var line = this.props.match.params.line;
         this.state =
         {
+            trafic: null,
+            directions: "s",
             loaded: false
         }
-        fetch("https://api-ratp.pierre-grimaud.fr/v3/traffic/" + type + "s/" + line)
-        .then(response => response.json())
-        .then(data => this.setState({
-            trafic: data.result,
-            loaded: true
-        }))
+
+    }
+    componentWillMount()
+    {
+        var type = this.props.match.params.type;
+        var line = this.props.match.params.line;
+
+
+        var apiRequest1 = fetch("https://api-ratp.pierre-grimaud.fr/v3/lines/" + type + "s/" + line)
+        .then(function(response){
+             return response.json()
+        });
+        var apiRequest2 = fetch("https://api-ratp.pierre-grimaud.fr/v3/traffic/" + type + "s/" + line)
+        .then(function(response){
+             return response.json()
+        });
+        var that = this;
+        Promise.all([apiRequest1,apiRequest2]).then(function(values){
+            that.setState({
+                directions: values[0].result[0].directions,
+                trafic: values[1].result,
+                loaded: true
+            }) ;
+        });
+
+        //
+        // fetch("https://api-ratp.pierre-grimaud.fr/v3/lines/" + type + "s/" + line)
+        // .then(response => response.json())
+        // .then(data => this.setState({
+        //     directions: data.result.directions
+        // }))
+        // .then(() => {
+        //     console.log(this.state.directions)
+        // })
+        // fetch("https://api-ratp.pierre-grimaud.fr/v3/traffic/" + type + "s/" + line)
+        // .then(response => response.json())
+        // .then(data => this.setState({
+        //     trafic: data.result,
+        // }));
+        // console.log("ololol")
+        // this.setState({loaded: this.state.trafic != null && this.state.directions != null })
+
     }
     render()
     {
@@ -53,7 +91,10 @@ export default class Ligne extends Component
                                         || <Icon name="circle" className="status-indicator red"/>)
                                     }
                                 </div>
-
+                                <br />
+                                <span className="directions">
+                                    {this.state.directions}
+                                </span>
                             </Message.Header>
                         </Message>
                     </Grid.Column>
