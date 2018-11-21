@@ -24,7 +24,7 @@ class VerticalMenu extends Component {
                     <Icon name="question circle" />À propos
                 </div>
                 <div className="item legal">
-                    Made by <a target="_blank" href="http://gallifray.fr/">Gallifray</a> with <Icon name="heart" />
+                    v0.2 Made by <a target="_blank" href="http://gallifray.fr/">Gallifray</a> with <Icon name="heart" />
                 </div>
             </div>
         )
