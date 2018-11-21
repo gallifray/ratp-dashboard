@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import MyMenu from './components/menu'
 import MyFooter from './components/footer'
 import './style/main.css'
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import { Image, Popup, Grid, Message, Icon, Container, Loader, Dimmer, List, Menu } from 'semantic-ui-react'
 import { LinesRer, LinesMetro, LinesTramway } from './components/lines'
+import Home from './pages/Home';
 
 
 class VerticalMenu extends Component {
@@ -99,87 +101,24 @@ class App extends Component {
     }
 
     render() {
-        return (<div>
-            <MyMenu reloadAPIData={this.reloadAPIData} />
-            <div className="main-content">
-                <Grid stackable columns={2}>
-                    <Grid.Column largeScreen={3} computer={4} tablet={5} className="responsive-menu">
-                        <VerticalMenu />
-                    </Grid.Column>
-                    <Grid.Column largeScreen={13} computer={12} tablet={11}>
-                        <Grid stackable columns={3} reversed='mobile'>
-                            <Grid.Column width={6}>
-                                <Message>
-                                    <Message.Header className="line-header">
-                                        <img src="./img/metro.svg" />
-                                    </Message.Header>
-                                    <Grid centered columns={16}>
-                                        {
-                                            !this.state.reloaded &&
-                                            <Dimmer active inverted>
-                                                <Loader inverted />
-                                            </Dimmer>
-                                        }
-                                        <LinesMetro data={this.state.metros} loaded={this.state.loaded}/>
-                                    </Grid>
-                                </Message>
+        return (
+            <Router>
+                <div>
+                    <MyMenu reloadAPIData={this.reloadAPIData} />
+                    <div className="main-content">
+                        <Grid stackable columns={2}>
+                            <Grid.Column largeScreen={3} computer={4} tablet={5} className="responsive-menu">
+                                <VerticalMenu />
                             </Grid.Column>
-                            <Grid.Column width={5}>
-                                <Message>
-                                    <Message.Header className="line-header">
-                                        <img src="./img/rer.svg" />
-                                    </Message.Header>
-                                    <Grid centered columns={16}>
-                                        {
-                                            !this.state.reloaded &&
-                                            <Dimmer active inverted>
-                                                <Loader inverted />
-                                            </Dimmer>
-                                        }
-                                        <LinesRer data={this.state.rers} loaded={this.state.loaded}/>
-                                    </Grid>
-                                </Message>
-                                <Message>
-                                    <Message.Header className="line-header">
-                                        <img src="./img/tramway.svg" />
-                                    </Message.Header>
-                                    <Grid centered columns={16}>
-                                        {
-                                            !this.state.reloaded &&
-                                            <Dimmer active inverted>
-                                                <Loader inverted />
-                                            </Dimmer>
-                                        }
-                                        <LinesTramway data={this.state.tramways} loaded={this.state.loaded}/>
-                                    </Grid>
-                                </Message>
-                            </Grid.Column>
-                            <Grid.Column width={5}>
-                                <Message>
-                                    <Message.Header className="perturbation-title">
-                                        <Icon name="warning circle" />
-                                        Perturbations
-                                        <br/>
-                                    </Message.Header>
-                                    {
-                                        !this.state.reloaded &&
-                                        <Dimmer active inverted>
-                                            <Loader inverted />
-                                        </Dimmer>
-                                    }
-                                    <h3>Métro:</h3>
-                                    <PerturbationsList data={this.state.metros} type="metro" loaded={this.state.loaded} />
-                                    <h3>RER:</h3>
-                                    <PerturbationsList data={this.state.rers} type="rer" loaded={this.state.loaded} />
-                                    <h3>Tramway:</h3>
-                                    <PerturbationsList data={this.state.tramways} type="tramway" loaded={this.state.loaded} />
-                                </Message>
-                            </Grid.Column>
+                            <Switch>
+                                <Route exact path="/" component={Home}/>
+                            </Switch>
                         </Grid>
-                    </Grid.Column>
-                </Grid>
-            </div>
-        </div>);
+                    </div>
+                </div>
+            </Router>
+
+        );
     }
 }
 
