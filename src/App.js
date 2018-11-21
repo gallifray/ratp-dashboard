@@ -13,12 +13,16 @@ class VerticalMenu extends Component {
     {
         return (
             <div className="verticalBar">
-                <div className="item border">
-                    <Icon name="th" />Vue d'ensemble
-                </div>
-                <div className="item border">
-                    <Icon name="clock outline" />Trafic en temps réel
-                </div>
+                <Link to="/">
+                    <div className="item border">
+                        <Icon name="th" />Vue d'ensemble
+                    </div>
+                </Link>
+                <Link to="traffic">
+                    <div className="item border">
+                        <Icon name="clock outline" />Trafic en temps réel
+                    </div>
+                </Link>
                 <div className="item border">
                     <Icon name="map outline" />Carte interactive
                 </div>

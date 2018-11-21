@@ -7,33 +7,6 @@ import { Image, Popup, Grid, Message, Icon, Container, Loader, Dimmer, List, Men
 import { LinesRer, LinesMetro, LinesTramway } from '../components/lines';
 
 
-class VerticalMenu extends Component {
-    render()
-    {
-        return (
-            <div className="verticalBar">
-                <div className="item border">
-                    <Icon name="th" />Vue d'ensemble
-                </div>
-                <Link to="/traffic">
-                    <div className="item border">
-                        <Icon name="clock outline" />Trafic en temps réel
-                    </div>
-                </Link>
-                <div className="item border">
-                    <Icon name="map outline" />Carte interactive
-                </div>
-                <div className="item about">
-                    <Icon name="question circle" />À propos
-                </div>
-                <div className="item legal">
-                    v0.3 &mdash; Made by <a target="_blank" href="http://gallifray.fr/">Gallifray</a> with <Icon name="heart" />
-                </div>
-            </div>
-        )
-    }
-}
-
 class PerturbationsList extends Component
 {
     constructor(props) {
@@ -69,7 +42,7 @@ class PerturbationsList extends Component
     }
 }
 
-class App extends Component {
+class Home extends Component {
     constructor(props) {
         super(props);
         this.reloadAPIData = this.reloadAPIData.bind(this);
@@ -178,4 +151,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default Home;
