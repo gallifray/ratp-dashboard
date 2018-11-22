@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import { Icon } from 'semantic-ui-react';
+import { Icon, Label } from 'semantic-ui-react';
 
 
 export default class VerticalMenu extends Component {
@@ -27,11 +27,11 @@ export default class VerticalMenu extends Component {
                 <div className="item border">
                     <Icon name="map outline" />Carte interactive
                 </div>
-                <div className="item about">
+                {/*<div className="item about">
                     <Icon name="question circle" />À propos
-                </div>
+                </div>*/}
                 <div className="item legal">
-                    v0.4 &mdash; Made by <a rel="noopener noreferrer" target="_blank" href="http://gallifray.fr/">Gallifray</a> with <Icon name="heart" />
+                    <Label>v0.5</Label>Made by <a rel="noopener noreferrer" target="_blank" href="http://gallifray.fr/">Gallifray</a> with <Icon name="heart" />
                 </div>
             </div>
         )

@@ -323,7 +323,8 @@ div.verticalBar div.item.about
 {
     color: #b3b3b3;
     position: absolute;
-    bottom: 30px;
+    bottom: 35px;
+    cursor: default !important;
 }
 
 div.verticalBar div.item.legal
@@ -332,11 +333,20 @@ div.verticalBar div.item.legal
     position: absolute;
     bottom: 5px;
     font-size: 11px;
+    cursor: default !important;
+}
+
+div.verticalBar div.item.legal .label
+{
+    background-color: #464646 !important;
+    color: #adadad;
+    margin-right: 5px
 }
 
 div.verticalBar div.item.legal i
 {
     font-size: 11px;
+    vertical-align: baseline;
 }
 
 div.verticalBar div.item i
