@@ -79,7 +79,6 @@ class Home extends Component {
 
     render() {
         return (
-            <Grid.Column largeScreen={13} computer={12} tablet={11}>
                 <Grid stackable columns={3} reversed='mobile'>
                     <Grid.Column width={6}>
                         <Message>
@@ -149,7 +148,6 @@ class Home extends Component {
                         </Message>
                     </Grid.Column>
                 </Grid>
-            </Grid.Column>
         );
     }
 }

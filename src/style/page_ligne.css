@@ -1,7 +1,8 @@
 div.page_ligne div.ui.message div.header
 {
     border-bottom: 1px solid #ededed;
-    padding-bottom: 7px
+    padding-bottom: 7px;
+    margin-bottom: 5px
 }
 
 div.page_ligne div.ui.message div.header img
@@ -70,4 +71,42 @@ div.page_ligne span.directions
     color: #0047a3;
     margin-top: 2px;
     display: inline-block;
+}
+
+div.page_ligne div.message.trafic
+{
+    background: #4CAF50;
+    background: -moz-linear-gradient(left, #4CAF50 0%, #89d23c 100%);
+    background: -webkit-linear-gradient(left, #4CAF50 0%,#89d23c 100%);
+    background: linear-gradient(to right, #4CAF50 0%,#89d23c 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4CAF50', endColorstr='#89d23c',GradientType=1 );
+}
+
+div.page_ligne div.message.trafic.bad
+{
+    background: #F44336;
+    background: -moz-linear-gradient(left, #F44336 0%, #b71c1c 100%);
+    background: -webkit-linear-gradient(left, #F44336 0%,#b71c1c 100%);
+    background: linear-gradient(to right, #F44336 0%,#b71c1c 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F44336', endColorstr='#b71c1c',GradientType=1 );
+}
+
+div.page_ligne div.message.trafic.warning
+{
+    background: #FFB300;
+    background: -moz-linear-gradient(left, #FFB300 0%, #F57F17 100%);
+    background: -webkit-linear-gradient(left, #FFB300 0%,#F57F17 100%);
+    background: linear-gradient(to right, #FFB300 0%,#F57F17 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F57F17', endColorstr='#F57F17',GradientType=1 );
+}
+
+div.page_ligne div.message.trafic *
+{
+    color: #fff !important;
+}
+
+div.page_ligne img.line-map
+{
+    max-width: 100%;
+    /* max-height: 200px; */
 }

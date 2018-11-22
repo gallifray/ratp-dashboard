@@ -13,17 +13,17 @@ class App extends Component {
         return (
             <Router>
                 <div>
-                    <MyMenu reloadAPIData={this.reloadAPIData} />
-                    <div className="main-content">
-                        <Grid stackable columns={2}>
-                            <Grid.Column largeScreen={3} computer={4} tablet={5} className="responsive-menu">
-                                <VerticalMenu />
-                            </Grid.Column>
+                    <div className="content_left">
+                        <VerticalMenu />
+                    </div>
+                    <div className="content_right">
+                        <MyMenu />
+                        <div className="main-content">
                             <Switch>
                                 <Route exact path="/" component={Home}/>
                                 <Route path="/ligne/:type/:line" component={Ligne}/>
                             </Switch>
-                        </Grid>
+                        </div>
                     </div>
                 </div>
             </Router>
