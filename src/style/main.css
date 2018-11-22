@@ -7,7 +7,7 @@ body, html
 {
     background-color: #ededed;
     color: #444;
-    height: calc(100vh - 70px);
+    height: 100vh;
 }
 
 .ui.menu
@@ -19,8 +19,8 @@ body, html
 {
     background-color: #fff;
     border-bottom: 1px solid #c3c3c3;
-    position: absolute;
-    width: 100%;
+    position: fixed;
+    width: calc(100vw - 250px);
     top: 0;
     z-index: 99999;
     color: #444
@@ -257,10 +257,6 @@ div.perturbation
         padding: 5px 0 15px 0;
     }
 
-    .ui.inverted.menu .menu-item
-    {
-        display: inherit;
-    }
     .responsive-menu
     {
         display: none !important;
@@ -276,6 +272,7 @@ div.perturbation
         margin-top: 2px
     }
 }
+
 
 .ui.vertical.menu {
     width: 100%;
@@ -397,7 +394,44 @@ div.content_right
 
 div.content_left
 {
-    position: absolute;
+    position: fixed;
     left: 0;
-    width: 250px
+    width: 250px;
+    z-index: 9999999;
+    transition: left .15s ease
+
+}
+
+
+@media only screen and (max-width: 600px)
+{
+    div.content_right
+    {
+        width: 100vw;
+        left: 0
+    }
+
+    div.content_left
+    {
+        left: -250px;
+    }
+
+    div.content_left.visible
+    {
+        left: 0;
+    }
+
+    div.main-content
+    {
+        padding: 0
+    }
+    .ui.inverted.menu.mainbar
+    {
+        width: 100vw;
+    }
+    .ui.inverted.menu .menu-item
+    {
+        display: inherit;
+    }
+
 }

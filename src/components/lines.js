@@ -3,7 +3,6 @@ import '../style/main.css'
 import { Popup, Icon } from 'semantic-ui-react'
 import { Link } from "react-router-dom";
 
-
 export default class Lines extends Component {
     render()
     {
@@ -21,7 +20,7 @@ export default class Lines extends Component {
 
                             <div className="line-status">
                                 <img
-                                    className="line-logo "
+                                    className="line-logo"
                                     src={"/img/lignes/" + this.props.type + "/" + line.line + ".svg"}
                                     alt={"/img/lignes/" + this.props.type + "/" + line.line}
                                 />

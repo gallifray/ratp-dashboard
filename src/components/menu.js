@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 class MyMenu extends Component {
     toggleMenu()
     {
-        var element = document.getElementsByClassName("responsive-menu")[0];
+        var element = document.getElementsByClassName("content_left")[0];
         element.classList.toggle("visible");
     }
 
@@ -23,7 +23,7 @@ class MyMenu extends Component {
                 </Menu.Item>
                 <Menu.Menu position='right'>
                     <Menu.Item onClick={this.props.reloadAPIData}>
-                        <Icon name="refresh" className="refresh"/>
+                        <Icon name="sync alternate" className="refresh"/>
                     </Menu.Item>
                 </Menu.Menu>
             </Menu>

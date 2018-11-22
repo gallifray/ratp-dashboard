@@ -63,7 +63,7 @@ export default class Ligne extends Component
             )
         }
         return (
-                <Grid stackable columns={2} reversed='mobile' className="page_ligne">
+                <Grid stackable columns={2} className="page_ligne">
                     <Grid.Column width={type !== "rer" ? 16 : 12}>
                         <Message>
                             <Message.Header>
@@ -84,7 +84,16 @@ export default class Ligne extends Component
                                     {this.state.directions}
                                 </span>
                             </Message.Header>
-                                <img className="line-map" src={"/img/plans/" + type + "/" + line + ".gif"} />
+                                <img
+                                    className="line-map"
+                                    src={"/img/plans/" + type + "/" + line + ".gif"}
+                                    loader=
+                                    {
+                                        <Dimmer>
+                                            <Loader />
+                                        </Dimmer>
+                                    }
+                                />
                         </Message>
                     </Grid.Column>
                     <Grid.Column width={type !== "rer" ? 6 : 4}>
