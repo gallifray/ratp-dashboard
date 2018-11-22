@@ -31,7 +31,7 @@ export default class VerticalMenu extends Component {
                     <Icon name="question circle" />À propos
                 </div>
                 <div className="item legal">
-                    v0.2 &mdash; Made by <a rel="noopener noreferrer" target="_blank" href="http://gallifray.fr/">Gallifray</a> with <Icon name="heart" />
+                    v0.4 &mdash; Made by <a rel="noopener noreferrer" target="_blank" href="http://gallifray.fr/">Gallifray</a> with <Icon name="heart" />
                 </div>
             </div>
         )
