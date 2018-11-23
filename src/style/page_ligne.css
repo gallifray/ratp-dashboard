@@ -82,7 +82,7 @@ div.page_ligne div.message.trafic
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4CAF50', endColorstr='#89d23c',GradientType=1 );
 }
 
-div.page_ligne div.message.trafic.bad
+div.page_ligne div.message.bad
 {
     background: #F44336;
     background: -moz-linear-gradient(left, #F44336 0%, #b71c1c 100%);
@@ -109,4 +109,24 @@ div.page_ligne img.line-map
 {
     max-width: 100%;
     /* max-height: 200px; */
+}
+
+div.page_ligne div.average_time *
+{
+    color: #fff !important
+}
+
+div.page_ligne div.average_time
+{
+    text-align: center;
+    background: #2196F3;
+    background: -moz-linear-gradient(left, #2196F3 0%, #00BCD4 100%);
+    background: -webkit-linear-gradient(left, #2196F3 0%,#00BCD4 100%);
+    background: linear-gradient(to right, #2196F3 0%,#00BCD4 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2196F3', endColorstr='#00BCD4',GradientType=1 );
+}
+
+div.page_ligne div.average_time .perturbation-title
+{
+    margin-bottom: 0 !important
 }

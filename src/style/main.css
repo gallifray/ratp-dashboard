@@ -425,6 +425,17 @@ div.content_left
     {
         left: -250px;
     }
+    div.content_left.visible div.overlay
+    {
+        content: '';
+        background: rgba(0,0,0,0.65);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+    }
 
     div.content_left.visible
     {

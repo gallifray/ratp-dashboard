@@ -110,6 +110,17 @@ export default class Ligne extends Component
                             </div>
                         </Message>
                     </Grid.Column>
+                    <Grid.Column width={type !== "rer" ? 4 : 4}>
+                        <Message className={"average_time " + (this.state.trafic.slug === "normal" ? "" : (this.state.trafic.slug === "normal_trav" ? "warning" : "bad"))}>
+                            <Message.Header className="perturbation-title">
+                                Temps d'attente moyen
+                            </Message.Header>
+                            <Statistic>
+                              <Statistic.Value>3</Statistic.Value>
+                              <Statistic.Label>Minutes</Statistic.Label>
+                            </Statistic>
+                        </Message>
+                    </Grid.Column>
                 </Grid>
 
         );

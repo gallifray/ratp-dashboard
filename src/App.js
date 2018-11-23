@@ -9,11 +9,20 @@ import VerticalMenu from './components/verticalMenu';
 
 
 class App extends Component {
+    componentDidMount()
+    {
+        var overlay = document.getElementsByClassName("overlay")[0];
+        overlay.onclick = function() {
+            var element = document.getElementsByClassName("content_left")[0];
+            element.classList.toggle("visible");
+        };
+    }
     render() {
         return (
             <Router>
                 <div>
                     <div className="content_left">
+                        <div className="overlay" />
                         <VerticalMenu />
                     </div>
                     <div className="content_right">
