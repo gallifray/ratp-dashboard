@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Message, Icon, Dimmer, Loader, Statistic } from 'semantic-ui-react'
 import '../style/page_ligne.css'
+import AverageTime from '../components/average_time'
 
 
 export default class Ligne extends Component
@@ -64,7 +65,7 @@ export default class Ligne extends Component
         }
         return (
                 <Grid stackable columns={2} className="page_ligne">
-                    <Grid.Column width={type !== "rer" ? 16 : 12}>
+                    <Grid.Column width={12}>
                         <Message>
                             <Message.Header>
                                 <img alt={type + "-logo"} src={"/img/" + type + ".svg"} />
@@ -96,7 +97,7 @@ export default class Ligne extends Component
                                 />
                         </Message>
                     </Grid.Column>
-                    <Grid.Column width={type !== "rer" ? 6 : 4}>
+                    <Grid.Column width={4}>
                         <Message className={"trafic " + (this.state.trafic.slug === "normal" ? "" : (this.state.trafic.slug === "normal_trav" ? "warning" : "bad"))}>
                             <Message.Header className="perturbation-title">
                                 Etat actuel du trafic
@@ -109,17 +110,12 @@ export default class Ligne extends Component
                                 {this.state.trafic.message.charAt(0).toUpperCase() + this.state.trafic.message.slice(1)}
                             </div>
                         </Message>
-                    </Grid.Column>
-                    <Grid.Column width={type !== "rer" ? 4 : 4}>
-                        <Message className={"average_time " + (this.state.trafic.slug === "normal" ? "" : (this.state.trafic.slug === "normal_trav" ? "warning" : "bad"))}>
-                            <Message.Header className="perturbation-title">
-                                Temps d'attente moyen
-                            </Message.Header>
-                            <Statistic>
-                              <Statistic.Value>3</Statistic.Value>
-                              <Statistic.Label>Minutes</Statistic.Label>
-                            </Statistic>
-                        </Message>
+                        {
+                            type !== "rer" &&
+                            <Message className={"average_time " + (this.state.trafic.slug === "normal" ? "" : (this.state.trafic.slug === "normal_trav" ? "warning" : "bad"))}>
+                                <AverageTime type={type} line={line} />
+                            </Message>
+                        }
                     </Grid.Column>
                 </Grid>
 

@@ -130,3 +130,8 @@ div.page_ligne div.average_time .perturbation-title
 {
     margin-bottom: 0 !important
 }
+
+div.page_ligne div.average_time .loader
+{
+    margin-top: 20px
+}
