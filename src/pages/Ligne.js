@@ -74,10 +74,12 @@ export default class Ligne extends Component
                                     {
                                         this.state.trafic.slug === "normal"
                                         && <Icon name="circle" className="status-indicator"/>
-                                        || (this.state.trafic.slug === "normal_trav"
-                                        && <div><Icon name="circle" className="status-indicator"/>
-                                        <Icon name="warning sign" className="status-indicator orange"/></div>
-                                        || <Icon name="circle" className="status-indicator red"/>)
+                                    || (this.state.trafic.slug === "normal_trav"
+                                    && <div><Icon name="circle" className="status-indicator"/>
+                                    <Icon name="warning sign" className="status-indicator orange"/></div>
+                                    || (this.state.trafic.title === "Trafic perturbé"
+                                        && <Icon name="circle" className="status-indicator orange"/>
+                                        || <Icon name="circle" className="status-indicator red"/>))
                                     }
                                 </div>
                                 <br />
@@ -98,7 +100,7 @@ export default class Ligne extends Component
                         </Message>
                     </Grid.Column>
                     <Grid.Column width={4}>
-                        <Message className={"trafic " + (this.state.trafic.slug === "normal" ? "" : (this.state.trafic.slug === "normal_trav" ? "warning" : "bad"))}>
+                        <Message className={"trafic " + (this.state.trafic.slug === "normal" ? "" : (this.state.trafic.slug === "normal_trav" || this.state.trafic.title === "Trafic perturbé" ? "warning" : "bad"))}>
                             <Message.Header className="perturbation-title">
                                 Etat actuel du trafic
                             </Message.Header>
