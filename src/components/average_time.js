@@ -10,7 +10,8 @@ export default class AverageTime extends Component
         {
             resolved: false,
             stations: null,
-            times: []
+            times: [],
+            error: false
         }
         fetch("https://api-ratp.pierre-grimaud.fr/v3/stations/" + this.props.type + "s/" + this.props.line)
         .then(response => response.json())
@@ -58,6 +59,9 @@ export default class AverageTime extends Component
             }
             return fetch("https://api-ratp.pierre-grimaud.fr/v3/schedules/" + this.props.type + "s/" + this.props.line + "/" + this.state.points[1].slug + "/A+R")
         })
+        .catch(rej => {
+            this.setState({error: true});
+        })
         .then(response => response.json())
         .then(data => {
             var schedule = data.result.schedules
@@ -90,6 +94,9 @@ export default class AverageTime extends Component
                 }))
             }
             return fetch("https://api-ratp.pierre-grimaud.fr/v3/schedules/" + this.props.type + "s/" + this.props.line + "/" + this.state.points[2].slug + "/A+R")
+        })
+        .catch(rej => {
+            this.setState({error: true});
         })
         .then(response => response.json())
         .then(data => {
@@ -132,24 +139,38 @@ export default class AverageTime extends Component
                 resolved: true
             })
         })
+        .catch(rej => {
+            this.setState({error: true});
+        })
 
     }
 
     render()
     {
+        if (this.state.error)
+        {
+            return (
+                <Message className="average_time disabled">
+                    <Message.Header className="perturbation-title">
+                        Temps d'attente moyen
+                    </Message.Header>
+                    <p className="error">Données indisponibles</p>
+                </Message>
+            )
+        }
         if (!this.state.resolved)
         {
             return (
-                <div>
+                <Message className="average_time">
                     <Message.Header className="perturbation-title">
                         Temps d'attente moyen
                     </Message.Header>
                     <Loader active inline inverted/>
-                </div>
+                </Message>
             )
         }
         return (
-            <div>
+            <Message className={"average_time " + (this.state.average <= 5 ? "" : (this.state.average < 10 ? "warning" : "bad"))}>
                 <Message.Header className="perturbation-title">
                     Temps d'attente moyen
                 </Message.Header>
@@ -157,7 +178,7 @@ export default class AverageTime extends Component
                   <Statistic.Value>{this.state.average}</Statistic.Value>
                   <Statistic.Label>Minutes</Statistic.Label>
                 </Statistic>
-            </div>
+            </Message>
         )
     }
 }

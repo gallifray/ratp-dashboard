@@ -31,7 +31,9 @@ export default class Lines extends Component {
                                 || (line.slug === "normal_trav"
                                 && <div><Icon name="circle" className="status-indicator"/>
                                 <Icon name="warning sign" className="status-indicator orange"/></div>
-                                || <Icon name="circle" className="status-indicator red"/>)
+                                || (line.title === "Trafic perturbé"
+                                    && <Icon name="circle" className="status-indicator orange"/>
+                                    || <Icon name="circle" className="status-indicator red"/>))
                                 }
                             </div>
                         }

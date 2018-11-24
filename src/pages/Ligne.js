@@ -112,9 +112,7 @@ export default class Ligne extends Component
                         </Message>
                         {
                             type !== "rer" &&
-                            <Message className={"average_time " + (this.state.trafic.slug === "normal" ? "" : (this.state.trafic.slug === "normal_trav" ? "warning" : "bad"))}>
-                                <AverageTime type={type} line={line} />
-                            </Message>
+                            <AverageTime type={type} line={line} />
                         }
                     </Grid.Column>
                 </Grid>
