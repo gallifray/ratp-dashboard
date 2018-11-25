@@ -10,6 +10,18 @@ div.page_ligne div.ui.message div.header img
     height: 55px
 }
 
+@media only screen and (max-width: 600px)
+{
+    div.page_ligne div.ui.message div.header img
+    {
+        height: 30px
+    }
+    div.page_ligne div.ui.message div.header img:first-child
+    {
+        margin-right: 4px;
+    }    
+}
+
 div.page_ligne div.ui.message div.header img:first-child
 {
     margin-right: 8px;

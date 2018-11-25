@@ -56,11 +56,9 @@ export default class Ligne extends Component
         if (!this.state.loaded)
         {
             return (
-                <Grid.Column largeScreen={13} computer={12} tablet={11} className="page_ligne">
-                    <Dimmer active inverted>
-                        <Loader inverted>Chargement...</Loader>
-                    </Dimmer>
-                </Grid.Column>
+                <Dimmer active inverted style={{height: "100vh", backgroundColor: "#ededed"}}>
+                    <Loader inverted>Chargement...</Loader>
+                </Dimmer>
             )
         }
         return (

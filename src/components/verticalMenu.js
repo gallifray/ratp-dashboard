@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import { Icon, Label } from 'semantic-ui-react';
+import { Icon, Label, Select } from 'semantic-ui-react';
 
 
 export default class VerticalMenu extends Component {
@@ -13,20 +13,12 @@ export default class VerticalMenu extends Component {
     render()
     {
         return (
-            <div className="verticalBar">
+            <div className="verticalBar center">
                 <Link to="/" onClick={this.toggleMenu}>
                     <div className="item border">
                         <Icon name="th" />Vue d'ensemble
                     </div>
                 </Link>
-                <Link to="/traffic" onClick={this.toggleMenu}>
-                    <div className="item border">
-                        <Icon name="clock outline" />Trafic en temps réel
-                    </div>
-                </Link>
-                <div className="item border">
-                    <Icon name="map outline" />Carte interactive
-                </div>
                 {/*<div className="item about">
                     <Icon name="question circle" />À propos
                 </div>*/}
