@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Grid, Message, Icon, Dimmer, Loader, Statistic } from 'semantic-ui-react'
 import '../style/page_ligne.css'
-import AverageTime from '../components/average_time'
+import AverageTime from '../components/averageTime'
+import NextPassages from '../components/nextPassages'
 
 
 export default class Ligne extends Component
@@ -62,7 +63,7 @@ export default class Ligne extends Component
             )
         }
         return (
-                <Grid stackable columns={2} className="page_ligne">
+                <Grid stackable columns={2} className="page_ligne" reversed='mobile'>
                     <Grid.Column width={12}>
                         <Message>
                             <Message.Header>
@@ -96,6 +97,7 @@ export default class Ligne extends Component
                                     }
                                 />
                         </Message>
+                        <NextPassages line={line} type={type} />
                     </Grid.Column>
                     <Grid.Column width={4}>
                         <Message className={"trafic " + (this.state.trafic.slug === "normal" ? "" : (this.state.trafic.slug === "normal_trav" || this.state.trafic.title === "Trafic perturbé" ? "warning" : "bad"))}>

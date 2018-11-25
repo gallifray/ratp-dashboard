@@ -162,3 +162,15 @@ div.page_ligne div.average_time .loader
 {
     margin-top: 20px
 }
+
+div.next-passages div.header
+{
+    font-size: 30px !important;
+    line-height: 40px !important;
+    text-align: center;
+}
+
+div.next-passages div.content
+{
+    padding: 15px 0
+}

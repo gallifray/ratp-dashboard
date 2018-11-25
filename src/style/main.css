@@ -67,7 +67,7 @@ body, html
     background-color: #fff;
     color: #565656;
     padding-bottom: 20px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 div.ui.container
