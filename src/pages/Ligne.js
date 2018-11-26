@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Grid, Message, Icon, Dimmer, Loader, Statistic } from 'semantic-ui-react'
 import '../style/page_ligne.css'
 import AverageTime from '../components/averageTime'
-import NextPassages from '../components/nextPassages'
+import NextPassagesContainer from '../components/nextPassages'
 
 
 export default class Ligne extends Component
@@ -15,7 +15,7 @@ export default class Ligne extends Component
         this.state =
         {
             trafic: null,
-            directions: "s",
+            directions: "",
             loaded: false
         }
     }
@@ -63,8 +63,8 @@ export default class Ligne extends Component
             )
         }
         return (
-                <Grid stackable columns={2} className="page_ligne" reversed='mobile'>
-                    <Grid.Column width={12}>
+                <Grid stackable columns={2} className="page_ligne" >
+                    <Grid.Column computer={type === "rer" ? 16 : 11} tablet={16}>
                         <Message>
                             <Message.Header>
                                 <img alt={type + "-logo"} src={"/img/" + type + ".svg"} />
@@ -97,24 +97,34 @@ export default class Ligne extends Component
                                     }
                                 />
                         </Message>
-                        <NextPassages line={line} type={type} />
+                        <Grid stackable>
+                            <Grid.Column largeScreen={6} computer={8}>
+                                <Message className={"trafic " + (this.state.trafic.slug === "normal" ? "" : (this.state.trafic.slug === "normal_trav" || this.state.trafic.title === "Trafic perturbé" ? "warning" : "bad"))}>
+                                    <Message.Header className="perturbation-title">
+                                        Etat actuel du trafic
+                                    </Message.Header>
+                                    <b>
+                                        {this.state.trafic.title}
+                                    </b>
+                                    <br/>
+                                    <div className="trafic_message">
+                                        {this.state.trafic.message.charAt(0).toUpperCase() + this.state.trafic.message.slice(1)}
+                                    </div>
+                                </Message>
+                            </Grid.Column>
+                            <Grid.Column largeScreen={6} computer={8}>
+                                {
+                                    type !== "rer" &&
+                                    <AverageTime type={type} line={line} />
+                                }
+                            </Grid.Column>
+                        </Grid>
+
                     </Grid.Column>
-                    <Grid.Column width={4}>
-                        <Message className={"trafic " + (this.state.trafic.slug === "normal" ? "" : (this.state.trafic.slug === "normal_trav" || this.state.trafic.title === "Trafic perturbé" ? "warning" : "bad"))}>
-                            <Message.Header className="perturbation-title">
-                                Etat actuel du trafic
-                            </Message.Header>
-                            <b>
-                                {this.state.trafic.title}
-                            </b>
-                            <br/>
-                            <div className="trafic_message">
-                                {this.state.trafic.message.charAt(0).toUpperCase() + this.state.trafic.message.slice(1)}
-                            </div>
-                        </Message>
+                    <Grid.Column computer={5} tablet={16}>
                         {
                             type !== "rer" &&
-                            <AverageTime type={type} line={line} />
+                            <NextPassagesContainer line={line} type={type} />
                         }
                     </Grid.Column>
                 </Grid>

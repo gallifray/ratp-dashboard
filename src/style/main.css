@@ -101,6 +101,7 @@ div.ui.container
 .main-content {
     margin-top: 70px;
     padding: 0 15px;
+    padding-bottom: 15px
 }
 
 .line-header
@@ -399,7 +400,8 @@ div.content_right
 {
     width: calc(100vw - 250px);
     position: absolute;
-    left: 250px
+    left: 250px;
+    padding-bottom: 15px
 }
 
 div.content_left

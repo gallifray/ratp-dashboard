@@ -30,7 +30,6 @@ export default class AverageTime extends Component
         .then(data => {
             var schedule = data.result.schedules
             var val1, val2;
-            console.log(schedule)
 
             if (schedule[0].message.includes("mn"))
                 val1 = parseInt(schedule[0].message.substring(0, schedule[0].message.length - 2));
@@ -66,7 +65,6 @@ export default class AverageTime extends Component
         .then(data => {
             var schedule = data.result.schedules
             var val1, val2;
-            console.log(schedule)
 
             if (schedule[0].message.includes("mn"))
                 val1 = parseInt(schedule[0].message.substring(0, schedule[0].message.length - 2));
@@ -102,7 +100,6 @@ export default class AverageTime extends Component
         .then(data => {
             var schedule = data.result.schedules
             var val1, val2;
-            console.log(schedule)
 
             if (schedule[0].message.includes("mn"))
                 val1 = parseInt(schedule[0].message.substring(0, schedule[0].message.length - 2));

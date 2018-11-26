@@ -13,7 +13,7 @@ export default class VerticalMenu extends Component {
     render()
     {
         return (
-            <div className="verticalBar center">
+            <div className="verticalBar">
                 <Link to="/" onClick={this.toggleMenu}>
                     <div className="item border">
                         <Icon name="th" />Vue d'ensemble

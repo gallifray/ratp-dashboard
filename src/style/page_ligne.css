@@ -92,6 +92,7 @@ div.page_ligne div.message.trafic
     background: -webkit-linear-gradient(left, #4CAF50 0%,#89d23c 100%);
     background: linear-gradient(to right, #4CAF50 0%,#89d23c 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4CAF50', endColorstr='#89d23c',GradientType=1 );
+    text-align: center;
 }
 
 div.page_ligne div.message.bad
@@ -145,6 +146,7 @@ div.page_ligne div.average_time
     background: -webkit-linear-gradient(left, #2196F3 0%,#00BCD4 100%);
     background: linear-gradient(to right, #2196F3 0%,#00BCD4 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2196F3', endColorstr='#00BCD4',GradientType=1 );
+    margin-bottom: 15px !important;
 }
 
 div.page_ligne div.average_time .perturbation-title
@@ -163,14 +165,68 @@ div.page_ligne div.average_time .loader
     margin-top: 20px
 }
 
+div.next-passages
+{
+    text-align: center
+}
+
 div.next-passages div.header
 {
-    font-size: 30px !important;
-    line-height: 40px !important;
+    font-size: 25px !important;
+    line-height: 30px !important;
     text-align: center;
+}
+div.next-passages div.header i
+{
+    font-size: 20px
 }
 
 div.next-passages div.content
 {
-    padding: 15px 0
+    padding-top: 15px;
+}
+
+div.destination h2
+{
+    color: #0047a3;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 21px
+}
+
+div.destination div.line
+{
+    background-color: #709ad2;
+    padding: 10px 20px;
+    vertical-align: middle;
+    color: #fff;
+    border: 1px solid #5579a9;
+    text-align: left;
+    margin-top: -1px;
+}
+
+
+div.destination div.line:last-of-type
+{
+    background-color: #a1c0e8 !important;
+    border-radius: 0 0 4px 4px;
+}
+
+div.destination div.line:first-of-type
+{
+    background-color: #0047a3 !important;
+    font-weight: 900;
+    border-radius: 4px 4px 0 0;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+div.destination span
+{
+    font-size: 15px
+}
+
+div.statistic.upsideDown .value
+{
+    padding-bottom: 5px
 }
