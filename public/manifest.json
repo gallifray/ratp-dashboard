@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "RATP Dashboard",
+  "name": "Gallifray's RATP dashboard",
   "icons": [
     {
       "src": "favicon.ico",
