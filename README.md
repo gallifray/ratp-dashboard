@@ -21,10 +21,8 @@ The current version has the following functionalities:
   * Schedule of next passages by station
 
 ## Technologies used
-![](https://i.imgur.com/oUHcPlO.png =150x)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](https://i.imgur.com/pPQ8RXM.png =100x)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](https://i.imgur.com/JC2Qqmg.png =100x)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](https://i.imgur.com/C5u8ZIa.png =100x)
 
-
-
+<img src="https://i.imgur.com/oUHcPlO.png" alt="drawing" width="150"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://i.imgur.com/pPQ8RXM.png" alt="drawing" width="100"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://i.imgur.com/JC2Qqmg.png" alt="drawing" width="100"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://i.imgur.com/C5u8ZIa.png" alt="drawing" width="100"/>
 
 
 This project was made using several technologies & APIs:
