@@ -1,4 +1,4 @@
-# [**ratp-dashboard** `v0.6`](https://ratp.gallifray.fr)
+# [ratp-dashboard](https://ratp.gallifray.fr) `v0.6`
 
 
 > #### Disclamer
