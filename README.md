@@ -32,3 +32,10 @@ The website is hosted on [Netlify](https://www.netlify.com/).
 ## Possible improvements
 * Handle *Bus* & *Noctilien* networks.
 * Retreiving schedules for RERs, which currently doesn't work.
+
+# Experimental
+Beside the website https://ratp.gallifray.fr/, I developped desktop versions of ratp-dashboard.
+There are currently builds for Linux & macOS, Windowd version will be released soon...
+See: [**ratp-dashboard-electron**](https://github.com/gallifray/ratp-dashboard-electron)
+
+**Keep in mind that these apps are on an experimental phase and may not be stable.**
