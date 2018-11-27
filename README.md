@@ -21,6 +21,11 @@ The current version has the following functionalities:
   * Schedule of next passages by station
 
 ## Technologies used
+![](https://i.imgur.com/oUHcPlO.png =150x)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](https://i.imgur.com/pPQ8RXM.png =100x)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](https://i.imgur.com/JC2Qqmg.png =100x)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](https://i.imgur.com/C5u8ZIa.png =100x)
+
+
+
+
 
 This project was made using several technologies & APIs:
 * [React.js](https://github.com/facebook/react): a Javascript framework for making dynamic apps
