@@ -7,7 +7,6 @@ import Home from './pages/Home';
 import Ligne from './pages/Ligne';
 import VerticalMenu from './components/verticalMenu';
 
-
 class App extends Component {
     componentDidMount()
     {

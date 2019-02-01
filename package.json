@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-medium-image-zoom": "^3.0.15",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1",
     "semantic-ui-css": "^2.4.1",

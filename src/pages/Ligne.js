@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Message, Icon, Dimmer, Loader, Statistic } from 'semantic-ui-react'
+import ImageZoom from 'react-medium-image-zoom'
 import '../style/page_ligne.css'
 import AverageTime from '../components/averageTime'
 import NextPassagesContainer from '../components/nextPassages'
@@ -86,15 +87,17 @@ export default class Ligne extends Component
                                     {this.state.directions}
                                 </span>
                             </Message.Header>
-                                <img
-                                    className="line-map"
-                                    src={"/img/plans/" + type + "/" + line + ".gif"}
-                                    loader=
-                                    {
-                                        <Dimmer>
-                                            <Loader />
-                                        </Dimmer>
-                                    }
+                                <ImageZoom
+                                    image={{
+                                    src: "/img/plans/" + type + "/" + line + ".gif",
+                                    alt: 'Plan de la ligne',
+                                    className: 'img',
+                                    style: { width: '100%' }
+                                    }}
+                                    zoomImage={{
+                                    src: "/img/plans/" + type + "/" + line + ".gif",
+                                    alt: 'Plan de la ligne'
+                                    }}
                                 />
                         </Message>
                         <Grid stackable>
