@@ -133,7 +133,7 @@ export default class Ligne extends Component {
                                 <br />
                                 <div className="trafic_message center">
                                     <Statistic>
-                                        <Statistic.Value>{parseFloat(this.state.stats[0].normal) / parseFloat(this.state.stats[0].total) * 100}%</Statistic.Value>
+                                        <Statistic.Value>{(parseFloat(this.state.stats[0].normal) / parseFloat(this.state.stats[0].total) * 100).toPrecision(4)}%</Statistic.Value>
                                         <Statistic.Label>de fonctionnement normal</Statistic.Label>
                                     </Statistic>
                                 </div>
