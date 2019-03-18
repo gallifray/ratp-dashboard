@@ -137,29 +137,39 @@ export default class Ligne extends Component {
                                         labels: ['Normal', 'Perturbé', 'Interrompu'],
                                         datasets: [{
                                             label: '# of Votes',
-                                            data: [this.state.stats[0].normal, this.state.stats[0].total - this.state.stats[0].normal, 2],
+                                            data: [this.state.stats[0].normal, this.state.stats[0].alerte, this.state.stats[0].critique],
                                             backgroundColor: [
                                                 '#6ec24696',
                                                 '#ff9800ab',
                                                 '#f44336bd',
-                                                'rgba(75, 192, 192, 0.2)',
-                                                'rgba(153, 102, 255, 0.2)',
-                                                'rgba(255, 159, 64, 0.2)'
                                             ],
                                             borderColor: [
                                                 '#6ec246',
                                                 '#ff9800',
                                                 '#f44336',
-                                                'rgba(75, 192, 192, 1)',
-                                                'rgba(153, 102, 255, 1)',
-                                                'rgba(255, 159, 64, 1)'
                                             ],
                                             borderWidth: 1
                                         }]
+                                    }} options={{
+                                        tooltips: {
+                                            callbacks: {
+                                                label: function (tooltipItem, data) {
+                                                    var dataset = data.datasets[tooltipItem.datasetIndex];
+                                                    var meta = dataset._meta[Object.keys(dataset._meta)[0]];
+                                                    var total = meta.total;
+                                                    var currentValue = dataset.data[tooltipItem.index];
+                                                    var percentage = parseFloat((currentValue / total * 100).toFixed(1));
+                                                    return percentage + '%';
+                                                },
+                                                title: function (tooltipItem, data) {
+                                                    return data.labels[tooltipItem[0].index];
+                                                }
+                                            }
+                                        }
                                     }} />
                                     <Statistic>
                                         <Statistic.Value>{(parseFloat(this.state.stats[0].normal) / parseFloat(this.state.stats[0].total) * 100).toPrecision(4)}%</Statistic.Value>
-                                        <Statistic.Label>de fonctionnement normal</Statistic.Label>
+                                        <Statistic.Label>de traffic normal</Statistic.Label>
                                     </Statistic>
                                 </div>
                             </Message>
