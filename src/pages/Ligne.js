@@ -37,7 +37,7 @@ export default class Ligne extends Component {
             .then(function (response) {
                 return response.json()
             });
-        var apiRequest4 = fetch("http://admin.gallifray.fr/api/count/" + type + "/" + line)
+        var apiRequest4 = fetch("https://ratp-api.gallifray.fr/api/count/" + type + "/" + line)
             .then(function (response) {
                 return response.json()
             });
