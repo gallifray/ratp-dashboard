@@ -4,6 +4,7 @@ import ImageZoom from 'react-medium-image-zoom'
 import '../style/page_ligne.css'
 import AverageTime from '../components/averageTime'
 import NextPassagesContainer from '../components/nextPassages'
+import { Doughnut } from 'react-chartjs-2';
 
 
 export default class Ligne extends Component {
@@ -132,6 +133,30 @@ export default class Ligne extends Component {
                                 <br />
                                 <br />
                                 <div className="trafic_message center">
+                                    <Doughnut data={{
+                                        labels: ['Normal', 'Perturbé', 'Interrompu'],
+                                        datasets: [{
+                                            label: '# of Votes',
+                                            data: [this.state.stats[0].normal, this.state.stats[0].total - this.state.stats[0].normal, 2],
+                                            backgroundColor: [
+                                                '#6ec24696',
+                                                '#ff9800ab',
+                                                '#f44336bd',
+                                                'rgba(75, 192, 192, 0.2)',
+                                                'rgba(153, 102, 255, 0.2)',
+                                                'rgba(255, 159, 64, 0.2)'
+                                            ],
+                                            borderColor: [
+                                                '#6ec246',
+                                                '#ff9800',
+                                                '#f44336',
+                                                'rgba(75, 192, 192, 1)',
+                                                'rgba(153, 102, 255, 1)',
+                                                'rgba(255, 159, 64, 1)'
+                                            ],
+                                            borderWidth: 1
+                                        }]
+                                    }} />
                                     <Statistic>
                                         <Statistic.Value>{(parseFloat(this.state.stats[0].normal) / parseFloat(this.state.stats[0].total) * 100).toPrecision(4)}%</Statistic.Value>
                                         <Statistic.Label>de fonctionnement normal</Statistic.Label>
