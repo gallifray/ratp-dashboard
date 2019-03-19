@@ -66,7 +66,7 @@ export default class Ligne extends Component {
         }
         return (
             <Grid stackable columns={2} className="page_ligne" >
-                <Grid.Column computer={type === "rer" ? 16 : 11} tablet={16}>
+                <Grid.Column computer={type === "rer" ? 16 : 12} tablet={16}>
                     <Message>
                         <Message.Header>
                             <img alt={type + "-logo"} src={"/img/" + type + ".svg"} />
@@ -122,66 +122,67 @@ export default class Ligne extends Component {
                                 <AverageTime type={type} line={line} />
                             }
                         </Grid.Column>
-                        <Grid.Column largeScreen={10} computer={10} className="center">
-                            <Message>
-                                <Message.Header className="perturbation-title">
-                                    Statistiques
-                                </Message.Header>
-                                <b>
-                                    Depuis le 18 mars 2019:
-                                </b>
-                                <br />
-                                <br />
-                                <div className="trafic_message center">
-                                    <Doughnut data={{
-                                        labels: ['Normal', 'Perturbé', 'Interrompu'],
-                                        datasets: [{
-                                            label: '# of Votes',
-                                            data: [this.state.stats[0].normal, this.state.stats[0].alerte, this.state.stats[0].critique],
-                                            backgroundColor: [
-                                                '#6ec24696',
-                                                '#ff9800ab',
-                                                '#f44336bd',
-                                            ],
-                                            borderColor: [
-                                                '#6ec246',
-                                                '#ff9800',
-                                                '#f44336',
-                                            ],
-                                            borderWidth: 1
-                                        }]
-                                    }} options={{
-                                        tooltips: {
-                                            callbacks: {
-                                                label: function (tooltipItem, data) {
-                                                    var dataset = data.datasets[tooltipItem.datasetIndex];
-                                                    var meta = dataset._meta[Object.keys(dataset._meta)[0]];
-                                                    var total = meta.total;
-                                                    var currentValue = dataset.data[tooltipItem.index];
-                                                    var percentage = parseFloat((currentValue / total * 100).toFixed(1));
-                                                    return percentage + '%';
-                                                },
-                                                title: function (tooltipItem, data) {
-                                                    return data.labels[tooltipItem[0].index];
-                                                }
-                                            }
-                                        }
-                                    }} />
-                                    <Statistic>
-                                        <Statistic.Value>{(parseFloat(this.state.stats[0].normal) / parseFloat(this.state.stats[0].total) * 100).toPrecision(4)}%</Statistic.Value>
-                                        <Statistic.Label>de traffic normal</Statistic.Label>
-                                    </Statistic>
-                                </div>
-                            </Message>
-                        </Grid.Column>
+                        {
+                            type !== "rer" &&
+                            <Grid.Column computer={5} tablet={16}>
+                                <NextPassagesContainer line={line} type={type} />
+                            </Grid.Column>
+                        }
                     </Grid>
 
                 </Grid.Column>
-                <Grid.Column computer={5} tablet={16}>
-                    {
-                        type !== "rer" &&
-                        <NextPassagesContainer line={line} type={type} />
-                    }
+
+                <Grid.Column computer={4} tablet={16} className="center">
+                    <Message>
+                        <Message.Header className="perturbation-title">
+                            Statistiques
+                                </Message.Header>
+                        <b>
+                            État du traffic depuis le 18 mars 2019:
+                                </b>
+                        <br />
+                        <br />
+                        <div className="trafic_message center">
+                            <Doughnut height={300} data={{
+                                labels: ['Normal', 'Perturbé', 'Interrompu'],
+                                datasets: [{
+                                    label: '# of Votes',
+                                    data: [this.state.stats[0].normal, this.state.stats[0].alerte, this.state.stats[0].critique],
+                                    backgroundColor: [
+                                        '#8bc34a',
+                                        '#fb8c00',
+                                        '#f44336',
+                                    ],
+                                    hoverBackgroundColor: [
+                                        '#8bc34add',
+                                        '#fb8c00dd',
+                                        '#f44336dd',
+                                    ],
+                                    borderWidth: 0
+                                }]
+                            }} options={{
+                                tooltips: {
+                                    callbacks: {
+                                        label: function (tooltipItem, data) {
+                                            var dataset = data.datasets[tooltipItem.datasetIndex];
+                                            var meta = dataset._meta[Object.keys(dataset._meta)[0]];
+                                            var total = meta.total;
+                                            var currentValue = dataset.data[tooltipItem.index];
+                                            var percentage = parseFloat((currentValue / total * 100).toFixed(1));
+                                            return percentage + '%';
+                                        },
+                                        title: function (tooltipItem, data) {
+                                            return data.labels[tooltipItem[0].index];
+                                        }
+                                    }
+                                }
+                            }} />
+                            <Statistic>
+                                <Statistic.Value>{(parseFloat(this.state.stats[0].normal) / parseFloat(this.state.stats[0].total) * 100).toPrecision(4)}%</Statistic.Value>
+                                <Statistic.Label>de traffic normal</Statistic.Label>
+                            </Statistic>
+                        </div>
+                    </Message>
                 </Grid.Column>
             </Grid>
 
