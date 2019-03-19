@@ -4,7 +4,7 @@ import ImageZoom from 'react-medium-image-zoom'
 import '../style/page_ligne.css'
 import AverageTime from '../components/averageTime'
 import NextPassagesContainer from '../components/nextPassages'
-import { Doughnut } from 'react-chartjs-2';
+import { Doughnut, Line } from 'react-chartjs-2';
 
 
 export default class Ligne extends Component {
@@ -23,7 +23,7 @@ export default class Ligne extends Component {
 
     componentWillMount() {
         var type = this.props.match.params.type;
-        var line = this.props.match.params.line;
+        var line = this.props.match.params.line.toLowerCase();
 
 
         var apiRequest1 = fetch("https://api-ratp.pierre-grimaud.fr/v3/lines/" + type + "s/" + line)
@@ -42,13 +42,28 @@ export default class Ligne extends Component {
             .then(function (response) {
                 return response.json()
             });
+        var apiRequest5 = fetch("https://ratp-api.gallifray.fr/api/archive/" + type + "/" + line)
+            .then(function (response) {
+                return response.json()
+            });
         var that = this;
-        Promise.all([apiRequest1, apiRequest2, apiRequest3, apiRequest4]).then(function (values) {
+        Promise.all([apiRequest1, apiRequest2, apiRequest3, apiRequest4, apiRequest5]).then(function (values) {
+            var timeline = values[4];
+            var res_timeline = []
+            timeline.forEach(element => {
+                res_timeline.push({
+                    x: element.to_char,
+                    y: parseFloat((parseFloat(element.normal) / parseFloat(element.total) * 100).toFixed(2))
+                })
+            });
+            console.log(res_timeline);
+            console.log(timeline);
             that.setState({
                 directions: values[0].result[0].directions,
                 trafic: values[1].result,
                 stations: values[2].result.stations,
                 stats: values[3],
+                timeline: res_timeline,
                 loaded: true
             });
         });
@@ -101,8 +116,61 @@ export default class Ligne extends Component {
                             }}
                         />
                     </Message>
-                    <Grid stackable>
-                        <Grid.Column largeScreen={6} computer={8}>
+                    <Grid stackable reversed='mobile'>
+                        <Grid.Column computer={10} tablet={10} className="center">
+                            <Message>
+                                <Message.Header className="perturbation-title">
+                                    Statistiques
+                                </Message.Header>
+                                <b>
+                                    État du traffic depuis le 18 mars 2019:
+                                </b>
+                                <br />
+                                <br />
+                                <div className="trafic_message center">
+                                    <Line height={150} data={{
+                                        datasets: [
+                                            {
+                                                label: "% de trafic normal",
+                                                data: this.state.timeline,
+                                                fill: false,
+                                                borderColor: '#be418d',
+                                                borderWidth: 1
+                                            }
+                                        ]
+                                    }} options={{
+                                        bezierCurve: false,
+                                        responsive: true,
+                                        aspectRatio: 1,
+                                        maintainAspectRatio: true,
+                                        scales: {
+                                            xAxes: [{
+                                                type: "time",
+                                                time: {
+                                                    format: 'DD/MM/YYYY',
+                                                    tooltipFormat: 'DD MMM YYYY',
+                                                    unit: 'day',
+                                                    displayFormats: {
+                                                        quarter: 'DD/MM/YYYY'
+                                                    }
+                                                },
+                                            }],
+                                            yAxes: [{
+                                                scaleLabel: {
+                                                    display: true,
+                                                    labelString: '%'
+                                                },
+                                                ticks: {
+                                                    beginAtZero: false
+                                                }
+                                            }]
+                                        }
+                                    }} />
+                                </div>
+                            </Message>
+                        </Grid.Column>
+
+                        <Grid.Column largeScreen={6} computer={6}>
                             <Message className={"trafic " + (this.state.trafic.slug === "normal" ? "" : (this.state.trafic.slug === "normal_trav" || this.state.trafic.title === "Trafic perturbé" ? "warning" : "bad"))}>
                                 <Message.Header className="perturbation-title">
                                     Etat actuel du trafic
@@ -115,19 +183,15 @@ export default class Ligne extends Component {
                                     {this.state.trafic.message.charAt(0).toUpperCase() + this.state.trafic.message.slice(1)}
                                 </div>
                             </Message>
-                        </Grid.Column>
-                        <Grid.Column largeScreen={6} computer={8}>
                             {
                                 type !== "rer" &&
                                 <AverageTime type={type} line={line} />
                             }
                         </Grid.Column>
-                        {
-                            type !== "rer" &&
-                            <Grid.Column computer={5} tablet={16}>
-                                <NextPassagesContainer line={line} type={type} />
-                            </Grid.Column>
-                        }
+                        <Grid.Column largeScreen={6} computer={8}>
+
+                        </Grid.Column>
+
                     </Grid>
 
                 </Grid.Column>
@@ -161,6 +225,9 @@ export default class Ligne extends Component {
                                     borderWidth: 0
                                 }]
                             }} options={{
+                                legend: {
+                                    position: "bottom",
+                                },
                                 tooltips: {
                                     callbacks: {
                                         label: function (tooltipItem, data) {
@@ -179,10 +246,16 @@ export default class Ligne extends Component {
                             }} />
                             <Statistic>
                                 <Statistic.Value>{(parseFloat(this.state.stats[0].normal) / parseFloat(this.state.stats[0].total) * 100).toPrecision(4)}%</Statistic.Value>
-                                <Statistic.Label>de traffic normal</Statistic.Label>
+                                <Statistic.Label>de trafic normal</Statistic.Label>
                             </Statistic>
                         </div>
                     </Message>
+                    {
+                        type !== "rer" &&
+                        <Grid.Column computer={5} tablet={16}>
+                            <NextPassagesContainer line={line} type={type} />
+                        </Grid.Column>
+                    }
                 </Grid.Column>
             </Grid>
 
