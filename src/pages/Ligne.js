@@ -161,7 +161,9 @@ export default class Ligne extends Component {
                                                     labelString: '%'
                                                 },
                                                 ticks: {
-                                                    beginAtZero: false
+                                                    beginAtZero: false,
+                                                    max: 100,
+                                                    min: 80
                                                 }
                                             }]
                                         }
