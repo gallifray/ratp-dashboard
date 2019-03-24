@@ -79,6 +79,28 @@ export default class Ligne extends Component {
                 </Dimmer>
             )
         }
+        const colors = {
+            metros: {
+                "1": "#FECE00",
+                "2": "#0065AE",
+                "3": "#9F9718",
+                "3B": "#98D3DE",
+                "4": "#BE418D",
+                "5": "#F19043",
+                "6": "#84C28D",
+                "7": "#F1A3B7",
+                "7B": "#84C28D",
+                "8": "#CDABCF",
+                "9": "#D5C800",
+                "10": "#E4B325",
+                "11": "#8C5E24",
+                "12": "#007E49",
+                "13": "#98D3DE",
+                "14": "#622180",
+            }
+        }
+
+        console.table("colors:", colors.metros["11"])
         return (
             <Grid stackable columns={2} className="page_ligne" >
                 <Grid.Column computer={type === "rer" ? 16 : 12} tablet={16}>
@@ -133,12 +155,20 @@ export default class Ligne extends Component {
                                             {
                                                 label: "% de trafic normal",
                                                 data: this.state.timeline,
-                                                fill: false,
-                                                borderColor: '#be418d',
-                                                borderWidth: 1
+                                                borderColor: type === "metro" ? colors.metros[line] : "black",
+                                                borderWidth: 1,
+                                                lineTension: 0,
+                                                backgroundColor: type === "metro" ? colors.metros[line] + "11" : "black",
+                                                fill: true,
                                             }
                                         ]
                                     }} options={{
+                                        backgroundColor: type === "metro" ? colors.metros[line] : "black",
+                                        elements: {
+                                            line: {
+                                                tension: 0
+                                            }
+                                        },
                                         bezierCurve: false,
                                         responsive: true,
                                         aspectRatio: 1,
@@ -163,7 +193,7 @@ export default class Ligne extends Component {
                                                 ticks: {
                                                     beginAtZero: false,
                                                     max: 100,
-                                                    min: 80
+                                                    // min: 80
                                                 }
                                             }]
                                         }
