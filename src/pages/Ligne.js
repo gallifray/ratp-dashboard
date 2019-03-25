@@ -155,15 +155,15 @@ export default class Ligne extends Component {
                                             {
                                                 label: "% de trafic normal",
                                                 data: this.state.timeline,
-                                                borderColor: type === "metro" ? colors.metros[line] : "black",
+                                                borderColor: type === "metro" ? colors.metros[line] : "#999999",
                                                 borderWidth: 1,
                                                 lineTension: 0,
-                                                backgroundColor: type === "metro" ? colors.metros[line] + "11" : "black",
+                                                backgroundColor: type === "metro" ? colors.metros[line] + "11" : "#9999992F",
                                                 fill: true,
                                             }
                                         ]
                                     }} options={{
-                                        backgroundColor: type === "metro" ? colors.metros[line] : "black",
+                                        backgroundColor: type === "metro" ? colors.metros[line] : "#9999992F",
                                         elements: {
                                             line: {
                                                 tension: 0
