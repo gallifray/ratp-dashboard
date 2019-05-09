@@ -4,22 +4,19 @@ import { Icon, Label, Select } from 'semantic-ui-react';
 
 
 export default class VerticalMenu extends Component {
-    toggleMenu() {
+    toggleMenu()
+    {
         var element = document.getElementsByClassName("content_left")[0];
         element.classList.toggle("visible");
     }
 
-    render() {
+    render()
+    {
         return (
             <div className="verticalBar">
                 <Link to="/" onClick={this.toggleMenu}>
                     <div className="item border">
                         <Icon name="th" />Vue d'ensemble
-                    </div>
-                </Link>
-                <Link to="/stats" onClick={this.toggleMenu}>
-                    <div className="item border">
-                        <Icon name="chart bar outline" />Statistiques
                     </div>
                 </Link>
                 {/*<div className="item about">
