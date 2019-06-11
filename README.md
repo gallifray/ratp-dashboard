@@ -11,7 +11,7 @@
 
 ## Global information
 
-**ratp-dashboard** is a real-time dashboard for monitoring RATP's (public transport in Paris) network status.
+**ratp-dashboard** is a real-time functional dashboard for monitoring RATP's (public transport in Paris) network status.
 
 The current version has the following functionalities:
 * Monitoring RATP's global traffic status (homepage)
