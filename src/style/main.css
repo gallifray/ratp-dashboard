@@ -22,7 +22,6 @@ body, html
     position: fixed;
     width: calc(100vw - 250px);
     top: 0;
-    z-index: 999;
     color: #444
 }
 
@@ -341,7 +340,8 @@ div.verticalBar div.item.legal .label
 {
     background-color: #464646 !important;
     color: #adadad;
-    margin-right: 5px
+    margin-right: 5px;
+    margin-left: -10px;
 }
 
 div.verticalBar div.item.legal i

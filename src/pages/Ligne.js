@@ -32,7 +32,7 @@ export default class Ligne extends Component
         .then(function(response){
              return response.json()
         });
-        var apiRequest2 = fetch("https://api-ratp.pierre-grimaud.fr/v3/traffic/" + type + "s/" + line)
+        var apiRequest2 = fetch("https://api-ratp.pierre-grimaud.fr/v4/traffic/" + type + "s/" + line)
         .then(function(response){
              return response.json()
         });

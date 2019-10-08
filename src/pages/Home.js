@@ -53,7 +53,7 @@ class Home extends Component {
             "loaded": false,
             "reloaded": true
         }
-        fetch('https://api-ratp.pierre-grimaud.fr/v3/traffic?_format=json')
+        fetch('https://api-ratp.pierre-grimaud.fr/v4/traffic?_format=json')
         .then(response => response.json())
         .then(data => this.setState({
             "metros": data.result.metros,
@@ -66,7 +66,7 @@ class Home extends Component {
     reloadAPIData()
     {
         this.setState({ reloaded: false });
-        fetch('https://api-ratp.pierre-grimaud.fr/v3/traffic?_format=json')
+        fetch('https://api-ratp.pierre-grimaud.fr/v4/traffic?_format=json')
         .then(response => response.json())
         .then(data => this.setState({
             "metros": data.result.metros,
