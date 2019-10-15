@@ -127,7 +127,7 @@ div.ui.container
 
 img.line-logo
 {
-    height: 35px;
+    height: 30px;
     vertical-align: middle;
 }
 
@@ -193,7 +193,7 @@ div.myfooter a
 {
     text-align: center;
     font-size: 20px !important;
-    border-bottom: 1px solid #dedede;
+    border-bottom: 1px solid #d2905f;
     padding: 15px 0 20px 0;
     margin-bottom: 20px !important;
 }

@@ -22,7 +22,7 @@ class MyMenu extends Component {
                     </Link>
                 </Menu.Item>
                 <Menu.Menu position='right'>
-                    <Menu.Item onClick={this.props.reloadAPIData}>
+                    <Menu.Item onClick={() => window.location.reload()}>
                         <Icon name="sync alternate" className="refresh"/>
                     </Menu.Item>
                 </Menu.Menu>
